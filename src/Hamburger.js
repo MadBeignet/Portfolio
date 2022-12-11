@@ -1,6 +1,5 @@
 import React from 'react';
 import './Hamburger.css';
-import { NavLink } from 'react-router-dom';
 
 export default function Hamburger() {
   return (

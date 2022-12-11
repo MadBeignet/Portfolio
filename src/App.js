@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor, watersensorproposal } from './images';
+import { updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
 import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
@@ -33,7 +33,7 @@ function Home() {
 function Resume() {
   return (
     <div className="page" align="middle">
-      <object type="application/pdf" data={resume} className="resume-display"></object>
+      <object type="application/pdf" data={resume} className="resume-display">none :(</object>
     </div>
   );
 }
@@ -42,15 +42,12 @@ function Projects() {
     <div className="page" align="middle">
       <div className="project-container">
         <NavLink to="/makerspace-machine-manager">
-          
-          <img className="project" src={machinemanager}/>
+          <img alt="none :(" className="project" src={machinemanager}/>
           <button className="project-button"></button>
-          
-
         </NavLink>
         <div className="overlay"></div>
         <NavLink to="/current-water-sensors">
-          <input className="project" type="image" src={watersensor}/>
+          <input alt="none :(" className="project" type="image" src={watersensor}/>
         </NavLink>
         <div className="overlay"></div>
       </div>
@@ -60,7 +57,7 @@ function Projects() {
 function CurrentWaterSensors() {
   return OnePager({
     projectTitle:"Mesh Water Sensors", 
-    problem:"Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it.", solution:"Water sensors that can detect and communicate to a server will send alerts when there is water in a certain location. The server can communicate instantaneously with subscribed and dedicated users, such as building managers, to alert them of flooding.", 
+    problem:"Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it.", 
     solution: "Water sensors that can detect and communicate to a server will send alerts when there is water in a certain location. The server can communicate instantaneously with subscribed and dedicated users, such as building managers, to alert them of flooding.",
     image1:the3sensors, 
     image2:updatedsensor, 
@@ -74,11 +71,11 @@ function OnePager(props) {
     <div className="page" align="middle">
       {/* should be making this just a page with information */}
       <div className="project-title">{props.projectTitle}
-      <img src={props.icon} className="page-icon"/>
+      <img alt="none :(" src={props.icon} className="page-icon"/>
       </div>
       <div className="line"></div>
         <div className="information-grid">
-        <img className="project-picture" src={props.image1} />
+        <img alt="none :(" className="project-picture" src={props.image1} />
           <div className="information">
             <div className="information-title">Problem</div>
               <p className="information-description">{props.problem}</p>
@@ -89,7 +86,7 @@ function OnePager(props) {
             <div className="information-title">Execution</div>
             <p className="information-description">{props.execution}</p>
           </div>
-          <img className="project-picture" src={props.image2} />
+          <img alt="none :(" className="project-picture" src={props.image2} />
           
         </div>
         <div className="project-background">
@@ -126,17 +123,17 @@ function App() {
         
       <a href={resume} download>
         <ToolTip title="Download Resume">
-          <img className="icon" src={filelines}/>
+          <img alt="none :(" className="icon" src={filelines}/>
         </ToolTip>
       </a>
       <NavLink to="projects" id="surround">
         <ToolTip title="View Projects">
-          <input type="image" src={foldervalue} className="icon" id="folder1" onMouseOver={() => updateFolder(folderopen)} onMouseOut={() => updateFolder(folder)} onClick = {() => "window.location='http://localhost.com:3000/projects"}/>
+          <input alt="none :(" type="image" src={foldervalue} className="icon" id="folder1" onMouseOver={() => updateFolder(folderopen)} onMouseOut={() => updateFolder(folder)} onClick = {() => "window.location='http://localhost.com:3000/projects"}/>
         </ToolTip>
       </NavLink>
       <a href="https://www.github.com/MadBeignet">
         <ToolTip title="View Github">
-          <img className="icon" id="github-icon" src={githubicon}/>
+          <img alt="none :(" className="icon" id="github-icon" src={githubicon}/>
         </ToolTip>
       </a>
 

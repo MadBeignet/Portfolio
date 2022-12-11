@@ -5,7 +5,7 @@ import githubicon from './github_icon.svg';
 import machinemanager from './machinemanager.png';
 import watersensor from './watersensor.JPG';
 import circle from './circle.svg';
-import watersensorproposal from './Indoor\ Water\ Sensors\ Proposal.jpg';
+import watersensorproposal from './Indoor Water Sensors Proposal.jpg';
 import the3sensors from './the3sensors.jpg';
 import updatedsensor from './updatedsensor.jpg';
 import updatedwatersensoricon from './updatedwatersensoricon.png'
