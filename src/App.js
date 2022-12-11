@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
+import { headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
 import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
@@ -11,9 +11,14 @@ function Home() {
     <div className="page" align="middle">
       <div className="about-me">
       <h1>About me:</h1>
-      <p>I'm a Junior at Tulane University studying Computer Science and Engineering Physics. I've coded this webpage from scratch utilizing ReactJS as well as basic HTML, JavaScript, and CSS.
+      <h2>Intro:</h2>
+      <div className="intro-grid">
+        <img alt="headshot" src={headshot} className="headshot"/>
+      <p>I'm a Junior at Tulane University studying Computer Science and Engineering Physics. I've coded this webpage from scratch utilizing <strong>ReactJS as well as basic HTML, JavaScript, and CSS</strong>.
         I love programming because it's a way to creatively express logic, but I also creatively express myself musically using several instruments, such as guitar, ukulele, violin, piano, and just by singing.
       </p>
+      </div>
+      <h2>Programming:</h2>
       <p>I've found myself accumulating more languages over time, dabbling just a little bit in some that I would never claim to know, but with each project, I add a new language.
          Some languages that I've used in the past include:
           <li>Java</li>
@@ -23,10 +28,11 @@ function Home() {
           <li>HTML</li>
           <li>CSS (if this is even a language)</li>
       </p>
-
+      <h2>Future Goals:</h2>
       <p>I'm looking to improve on the organization especially in CSS, but I'm constantly looking for ways to optimally organize and better represent code.
          I also have a goal to be familiar with React Hooks, so the folder icon above utilizes a hook to change state based on if the user is hovering over top.</p>
          </div>
+         <BottomHeader/>
     </div>
   );
 }
@@ -51,6 +57,7 @@ function Projects() {
         </NavLink>
         <div className="overlay"></div>
       </div>
+      <BottomHeader/>
     </div>
   );
 }
@@ -65,6 +72,18 @@ function CurrentWaterSensors() {
 
     icon: updatedwatersensoricon,
   });
+}
+function MachineManager() {
+  return OnePager({
+    projectTitle:"Makerspace Machine Manager",
+    problem:"The Tulane MakerSpace requires a way to have users both independently and safely use machines in the Space, but in January 2022, there was no longer a way to add new users or additional trainings to users.",
+    solution:"A web application that allows students to safely use machines through the use of authorization and a tag out system. Preferably, this system would be better than the previous, allowing for suggestions from current Fabrication Technicians.",
+    image1: machinemanager,
+    image2: filelines,
+    execution:"This project was created using ReactJS and NodeJS, allowing for a database and efficient communication between the server and the client. The project is currently in use at the Tulane MakerSpace, replacing the old machine manager.",
+
+    icon: machinemanager,
+  })
 }
 function OnePager(props) {
   return (
@@ -91,6 +110,7 @@ function OnePager(props) {
         </div>
         <div className="project-background">
       </div>
+      <BottomHeader/>
     </div>
   );
 
@@ -110,6 +130,13 @@ function GetPageName(loc) {
     }
   }
 };
+function BottomHeader() {
+  return (
+    <div className="bottom-header">
+      <a href="https://github.com/MadBeignet/Portfolio" className="repo-link">Click here to visit my Portfolio Repository</a>
+    </div>
+  )
+}
 
 function App() {
   const [foldervalue, updateFolder] = React.useState(folder);
@@ -143,6 +170,7 @@ function App() {
       <Route path="resume" element={<Resume />} />
       <Route path="projects" element = {<Projects />} />
       <Route path="current-water-sensors" element = {<CurrentWaterSensors />} />
+      <Route path="makerspace-machine-manager" element = {<MachineManager />} />
     </Routes>
 
     </div>

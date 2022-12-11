@@ -9,6 +9,7 @@ import watersensorproposal from './Indoor Water Sensors Proposal.jpg';
 import the3sensors from './the3sensors.jpg';
 import updatedsensor from './updatedsensor.jpg';
 import updatedwatersensoricon from './updatedwatersensoricon.png'
+import headshot from './Maddie_Wisinski.jpg'
 
 export {
     filelines,
@@ -22,4 +23,5 @@ export {
     the3sensors,
     updatedsensor,
     updatedwatersensoricon,
+    headshot,
 }

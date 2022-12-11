@@ -79,7 +79,6 @@
   position: relative;
   color: var(--whole-text-color);
   left: -20px;
-
 }
 
 .resume-display {
@@ -326,7 +325,47 @@
 .about-me p {
   font-size: 24px;
   font-family: Copperplate;
+  margin: 20px;
 }
 .about-me h1 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.about-me h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.headshot {
+  position: relative;
+  width: 250px;
+  height: initial;
+  top: -30px;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 250px 65%;
+  grid-gap: 20px;
+  margin: 20px;
+  margin-bottom: 0px;
+
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+.bottom-header {
+  position: relative;
+  width: calc(100% + 70px);
+  left:-30px;
+  height: 200px;
+  background-color: #813232;
+}
+
+.repo-link {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  font-family: var(--font);
+  color: var(--whole-background);
 }
