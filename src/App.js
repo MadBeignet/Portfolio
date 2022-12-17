@@ -14,19 +14,25 @@ function Home() {
       <h2>Intro:</h2>
       <div className="intro-grid">
         <img alt="headshot" src={headshot} className="headshot"/>
+      <div>
       <p>I'm a Junior at Tulane University studying Computer Science and Engineering Physics. I've coded this webpage from scratch utilizing <strong>ReactJS as well as basic HTML, JavaScript, and CSS</strong>.
         I love programming because it's a way to creatively express logic, but I also creatively express myself musically using several instruments, such as guitar, ukulele, violin, piano, and just by singing.
       </p>
+      <p>
+        In my freetime, I love to cook, bake, listen to music, create personal projects using a laser cutter or 3D printer, and play video games.
+      </p>
+      </div>
+     
       </div>
       <h2>Programming:</h2>
       <p>I've found myself accumulating more languages over time, dabbling just a little bit in some that I would never claim to know, but with each project, I add a new language.
          Some languages that I've used in the past include <strong>Java, Python, C, C++, JavaScript, HTML,</strong> and <strong>CSS</strong>
       </p>
       <h2>Projects</h2>
-      <p>Some projects that I've worked on that can be viewed here include <ToolTip title="View Project"><NavLink className="about-me-link" to="/current-water-sensors"><strong >Mesh Water Sensors</strong></NavLink></ToolTip> and a <ToolTip title="View Project"><NavLink className="about-me-link" to="/makerspace-machine-manager"><strong>Machine Manager and User Authentication System</strong></NavLink></ToolTip> for the <ToolTip title="View Tulane MakerSpace Wiki Page"><a className="about-me-link" href="https://makerspace.tulane.edu/index.php/Scot_Ackerman_MakerSpace_at_Tulane_University_Wiki">Tulane MakerSpace</a></ToolTip>. Other projects that I've worked on include a <ToolTip title="View GitHub Repository"><a className="about-me-link" href="https://github.com/tulane-graphics-2022/game-project-impostor"><strong>Remake of Joust</strong></a></ToolTip> using OpenGL in C++, a Signals Processing project about sending strings in morse code through frequencies from one computer that are then decoded by another computer, and a data science project about political participation in the United States, viewable <a className="about-me-link" href="MadBeignet.github.io"><strong>here</strong></a>.</p>
+      <p>Some projects that I've worked on that can be viewed on this website include <ToolTip title="View Project"><NavLink className="about-me-link" to="/current-water-sensors"><strong >Mesh Water Sensors</strong></NavLink></ToolTip> and an  <ToolTip title="View GitHub Repository"><a className="about-me-link" href="https://github.com/xpsKING/TU-Makerspace-Card-Reader">open source</a></ToolTip> <ToolTip title="View Project"><NavLink className="about-me-link" to="/makerspace-machine-manager"><strong>Machine Manager and User Authentication System</strong></NavLink></ToolTip> for the <ToolTip title="View Tulane MakerSpace Wiki Page"><a className="about-me-link" href="https://makerspace.tulane.edu/index.php/Scot_Ackerman_MakerSpace_at_Tulane_University_Wiki">Tulane MakerSpace</a></ToolTip>. Other projects that I've worked on include a <ToolTip title="View GitHub Repository"><a className="about-me-link" href="https://github.com/tulane-graphics-2022/game-project-impostor"><strong>Remake of Joust</strong></a></ToolTip> using OpenGL in C++, a Signals Processing project about sending strings in morse code through frequencies from one computer that are then decoded by another computer, and a data science project about political participation in the United States, viewable <a className="about-me-link" href="MadBeignet.github.io"><strong>here</strong></a>.</p>
       <h2>Future Goals:</h2>
-      <p>I'm looking to improve on the organization especially in CSS, but I'm constantly looking for ways to optimally organize and better represent code.
-         I also have a goal to be familiar with React Hooks, so the folder icon above utilizes a hook to change state based on if the user is hovering over top.</p>
+      <p>I'm constantly looking for ways to optimally organize and better represent code because there's no point in coding if it's impossible to go back and understand later.
+         I also have a goal to be more familiar with React Hooks, so the folder icon above utilizes a hook to change state based on if the user is hovering over top. I hope to include more project pages as time continues and strengthen this website.</p>
          </div>
          <BottomHeader/>
     </div>
