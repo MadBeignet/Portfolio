@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { addUser, editUser, mapexample, headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
-import Hamburger from './Hamburger.js';
+//import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
 import React from 'react';
@@ -172,10 +172,9 @@ function App() {
   return (
     
     <div className="header">
-      <Hamburger />
-      <NavLink to="/">
-      <span className="header-text">Maddie Wisinski </span>
-      </NavLink>
+      
+      {/**<Hamburger />**/}
+      
       <span className="title">Portfolio{GetPageName(location)}</span>
         
       <a href={resume} download>
@@ -183,6 +182,9 @@ function App() {
           <img alt="none :(" className="icon" src={filelines}/>
         </ToolTip>
       </a>
+      <NavLink to="/">
+        <input type="button" className="header-text" value="Maddie Wisinski"/>
+      </NavLink>
       <NavLink to="projects" id="surround">
         <ToolTip title="View Projects">
           <input alt="none :(" type="image" src={foldervalue} className="icon" id="folder1" onMouseOver={() => updateFolder(folderopen)} onMouseOut={() => updateFolder(folder)} onClick = {() => "window.location='http://localhost.com:3000/projects"}/>

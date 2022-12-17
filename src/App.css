@@ -23,9 +23,15 @@
   font-size: 18pt;
   color: var(--text-color);
   padding-top: 3px;
-  height: 26px;
+  height: 45px;
   width: fit-content;
-  left:60px;
+  left:-25px;
+  background-color: transparent;
+  border: none;
+}
+.header-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .title {
@@ -331,9 +337,7 @@
   z-index: 10;
   opacity: 0.5;
 }
-.overlay:hover {
-  background-color: gray;
-}
+
 .page-icon {
   position: absolute;
   right: 9%;
@@ -379,6 +383,7 @@
   padding: 0px;
   width: 100%;
   height: fit-content;
+  justify-items: center;
 }
 
 .footer {
