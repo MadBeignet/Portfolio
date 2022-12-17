@@ -10,6 +10,9 @@ import the3sensors from './the3sensors.jpg';
 import updatedsensor from './updatedsensor.jpg';
 import updatedwatersensoricon from './updatedwatersensoricon.png'
 import headshot from './Maddie_Wisinski.jpg'
+import mapexample from './mapexample.png'
+import addUser from './addUser.png';
+import editUser from './editUser.png';
 
 export {
     filelines,
@@ -24,4 +27,7 @@ export {
     updatedsensor,
     updatedwatersensoricon,
     headshot,
+    mapexample,
+    addUser,
+    editUser,
 }

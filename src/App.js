@@ -1,6 +1,6 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
+import { addUser, editUser, mapexample, headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
 import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
@@ -47,47 +47,50 @@ function Projects() {
   return (
     <div className="page" align="middle">
       <div className="project-container">
+        <h1>Machine Manager</h1>
+        <h1>Mesh Water Sensors</h1>
         <NavLink to="/makerspace-machine-manager">
-          <img alt="none :(" className="project" src={machinemanager}/>
-          <button className="project-button"></button>
+            <input type="image" alt="none :(" className="project" src={machinemanager}/>
         </NavLink>
         <div className="overlay"></div>
         <NavLink to="/current-water-sensors">
-          <input alt="none :(" className="project" type="image" src={watersensor}/>
+            <input type="image" alt="none :(" className="project" src={watersensor}/>
         </NavLink>
         <div className="overlay"></div>
       </div>
-      <BottomHeader/>
+      <BottomHeader id="projects-footer"/>
     </div>
   );
 }
 function CurrentWaterSensors() {
   return OnePager({
     projectTitle:"Mesh Water Sensors", 
-    problem:"Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it.", 
+    problem:"Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it, leading to unwanted, expensive water damage.", 
     solution: "Water sensors that can detect and communicate to a server will send alerts when there is water in a certain location. The server can communicate instantaneously with subscribed and dedicated users, such as building managers, to alert them of flooding.",
-    image1:the3sensors, 
-    image2:updatedsensor, 
-    execution:"This project is a mesh network of water sensors that can detect water and communicate to a server. The server can then communicate with subscribed users, such as building managers, to alert them of flooding. The project is currently in the prototyping phase.",
-
+    image1:the3sensors,  
+    execution:["My main job was creating the housing unit in Fusion360 to account for wires, electronics, sensors, as well as creating ways for water to be detected on all 4 sides. The device worked by having conductivity sensors, so when measuring the conductivity, a high value meant water.",
+    "Because we separated each sensor by 1 cm in height, this allowed us to read the water level to the centimeter. We sent a boolean array representative of each sensor to The Things Network, which allowed a webpage to read off and display points on a map relative to each device's water level. In later stages of this project, we began using ReactJS to represent our sensors on a map. Throughout this project, I learned the basics of Web Development and how to effectively prototype, and it's one of the projects I'm currently most proud of."],
+    images: [updatedsensor, false, mapexample,true],
     icon: updatedwatersensoricon,
   });
 }
 function MachineManager() {
   return OnePager({
     projectTitle:"Makerspace Machine Manager",
-    problem:"The Tulane MakerSpace requires a way to have users both independently and safely use machines in the Space, but in January 2022, there was no longer a way to add new users or additional trainings to users.",
+    problem:"The Tulane MakerSpace always requires a way to have users both independently and safely use machines in the Space, but in January 2022, there was no longer a way to add new users or additional trainings to users, which created a problem with ensuring independence of users throughout the Space.",
     solution:"A web application that allows students to safely use machines through the use of authorization and a tag out system. Preferably, this system would be better than the previous, allowing for suggestions from current Fabrication Technicians.",
     image1: machinemanager,
-    image2: filelines,
-    execution:"This project was created using ReactJS and NodeJS, allowing for a database and efficient communication between the server and the client. The project is currently in use at the Tulane MakerSpace, replacing the old machine manager.",
-
+    execution:["Using ReactJS and NodeJS ensured for a database and efficient communication between the server and the client, which is crucial when users rely on the permissions set by the system. Other than transferring over data and making sure that machines could be toggled on and off, one major problem that needed to be solved was adding users.Before, users would be manually added to the system through the use of a database on a raspberry pi. Our goal for this project was to surpass this level of maintanability, so we created a page dedicated to adding users. The page is extremely easy to use, requiring a Fabrication Technician's ID as well as the new card ID. The new user has to also input some additional information, and if any slot is left out, a warning pops up beside the input box. Through the use of this page, a new user is added to the system immediately, and this can be reflected by tapping the RFID card on a reader, presenting the user's name.",
+  "A large part of the MakerSpace is user independence, and part of this is training users to use certain machines and tools. Therefore, users need to be able to have trainings added, so that the system permits them to use the machines. I created the page to edit a user's training by first presenting a login page, which will only allow Fabrication Technicians or Administrators to access the edit page. Once a username is typed in, the user's trainings will appear. I decided to use a checkbox system to represent trainings as it's simple and represents exactly what is needed. Additionally, only Administrators will be able to see the \"FabTech\" Box. This software is currently in use at the Tulane MakerSpace, increasing the efficiency and user independence."],
+    images: [editUser, true, addUser, false],
     icon: machinemanager,
   })
 }
 function OnePager(props) {
+  let imageRight = false;
   return (
     <div className="page" align="middle">
+      <div className="project-background">
       {/* should be making this just a page with information */}
       <div className="project-title">{props.projectTitle}
       <img alt="none :(" src={props.icon} className="page-icon"/>
@@ -101,16 +104,40 @@ function OnePager(props) {
             <div className="information-title">Solution</div>
             <p className="information-description">{props.solution}</p>
           </div>
-          <div className="information">
-            <div className="information-title">Execution</div>
-            <p className="information-description">{props.execution}</p>
-          </div>
-          <img alt="none :(" className="project-picture" src={props.image2} />
+          {props.execution.map((exe) => {
+            imageRight = !imageRight;
+            let index = props.execution.indexOf(exe);
+            let imageId = props.images[index+1];
+            console.log(props.images);
+            console.log(imageId);
+            if (imageRight) {
+              return (
+                <div className="information-row">
+            <div className="information">
+              <div className="information-title">Execution</div>
+              <p className="information-description">{exe}</p>
+            </div>
+            <img alt="None :(" className="project-picture" id={imageId ? "short" : ""} src={props.images[index*2]} />
+            </div>
+              )
+            }
+            return (
+              <div className="information-row">
+                <img alt="none :(" className="project-picture" id={imageId ? "short" : ""} src={props.images[index*2]}  />
+              <div className="information">
+                
+                <div className="information-title"></div>
+                <p className="information-description">{exe}</p>
+            </div>
+            </div>
+            )
+          })}
           
         </div>
-        <div className="project-background">
+        <BottomHeader/>
       </div>
-      <BottomHeader/>
+      
+      
     </div>
   );
 
@@ -130,10 +157,10 @@ function GetPageName(loc) {
     }
   }
 };
-function BottomHeader() {
+function BottomHeader(props) {
   return (
-    <div className="bottom-header">
-      <a href="https://github.com/MadBeignet/Portfolio" className="repo-link">Click here to visit my Portfolio Repository</a>
+    <div className="footer" id={props.id || ''}>
+      <a href="https://github.com/MadBeignet/Portfolio" className="repo-link" >Click here to visit my Portfolio Repository</a>
     </div>
   )
 }
@@ -145,7 +172,9 @@ function App() {
     
     <div className="header">
       <Hamburger />
+      <NavLink to="/">
       <span className="header-text">Maddie Wisinski </span>
+      </NavLink>
       <span className="title">Portfolio{GetPageName(location)}</span>
         
       <a href={resume} download>
@@ -163,6 +192,7 @@ function App() {
           <img alt="none :(" className="icon" id="github-icon" src={githubicon}/>
         </ToolTip>
       </a>
+      
 
     {/**Routes**/}
     <Routes>
@@ -172,7 +202,7 @@ function App() {
       <Route path="current-water-sensors" element = {<CurrentWaterSensors />} />
       <Route path="makerspace-machine-manager" element = {<MachineManager />} />
     </Routes>
-
+    
     </div>
   );
 }
