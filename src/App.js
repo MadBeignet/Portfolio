@@ -20,14 +20,10 @@ function Home() {
       </div>
       <h2>Programming:</h2>
       <p>I've found myself accumulating more languages over time, dabbling just a little bit in some that I would never claim to know, but with each project, I add a new language.
-         Some languages that I've used in the past include:
-          <li>Java</li>
-          <li>Python</li>
-          <li>C, C++ (alsoOpenGL in C++)</li>
-          <li>JavaScript</li>
-          <li>HTML</li>
-          <li>CSS (if this is even a language)</li>
+         Some languages that I've used in the past include <strong>Java, Python, C, C++, JavaScript, HTML,</strong> and <strong>CSS</strong>
       </p>
+      <h2>Projects</h2>
+      <p>Some projects that I've worked on that can be viewed here include <ToolTip title="View Project"><NavLink className="about-me-link" to="/current-water-sensors"><strong >Mesh Water Sensors</strong></NavLink></ToolTip> and a <ToolTip title="View Project"><NavLink className="about-me-link" to="/makerspace-machine-manager"><strong>Machine Manager and User Authentication System</strong></NavLink></ToolTip> for the <ToolTip title="View Tulane MakerSpace Wiki Page"><a className="about-me-link" href="https://makerspace.tulane.edu/index.php/Scot_Ackerman_MakerSpace_at_Tulane_University_Wiki">Tulane MakerSpace</a></ToolTip>. Other projects that I've worked on include a <ToolTip title="View GitHub Repository"><a className="about-me-link" href="https://github.com/tulane-graphics-2022/game-project-impostor"><strong>Remake of Joust</strong></a></ToolTip> using OpenGL in C++, a Signals Processing project about sending strings in morse code through frequencies from one computer that are then decoded by another computer, and a data science project about political participation in the United States, viewable <a className="about-me-link" href="MadBeignet.github.io"><strong>here</strong></a>.</p>
       <h2>Future Goals:</h2>
       <p>I'm looking to improve on the organization especially in CSS, but I'm constantly looking for ways to optimally organize and better represent code.
          I also have a goal to be familiar with React Hooks, so the folder icon above utilizes a hook to change state based on if the user is hovering over top.</p>
@@ -68,9 +64,9 @@ function CurrentWaterSensors() {
     problem:"Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it, leading to unwanted, expensive water damage.", 
     solution: "Water sensors that can detect and communicate to a server will send alerts when there is water in a certain location. The server can communicate instantaneously with subscribed and dedicated users, such as building managers, to alert them of flooding.",
     image1:the3sensors,  
-    execution:["My main job was creating the housing unit in Fusion360 to account for wires, electronics, sensors, as well as creating ways for water to be detected on all 4 sides. The device worked by having conductivity sensors, so when measuring the conductivity, a high value meant water.",
-    "Because we separated each sensor by 1 cm in height, this allowed us to read the water level to the centimeter. We sent a boolean array representative of each sensor to The Things Network, which allowed a webpage to read off and display points on a map relative to each device's water level. In later stages of this project, we began using ReactJS to represent our sensors on a map. Throughout this project, I learned the basics of Web Development and how to effectively prototype, and it's one of the projects I'm currently most proud of."],
-    images: [updatedsensor, false, mapexample,true],
+    execution:["My main job was creating the housing unit in Fusion360 to account for wires, electronics, sensors, as well as creating ways for water to be detected on all 4 sides. The device worked by having conductivity sensors, so when measuring the conductivity, a high value meant water. Because we separated each sensor by 1 cm in height, this allowed us to read the water level to the centimeter. We sent a boolean array representative of each sensor to The Things Network, which allowed a webpage to read off and display points on a map relative to each device's water level. Through a short bit of JavaScript, the array was translated into events, water level, and the battery level of the device in millivolts.",
+    " This information was then accessed by a webpage, which displayed the sensors at their respective locations and indicated their water level visually on the map. In later stages of this project, we began using ReactJS to represent our sensors on a map. Throughout this project, I learned the basics of Web Development and how to effectively prototype, and it's one of the projects I'm currently most proud of."],
+    images: [mapexample,false, updatedsensor, false, ],
     icon: updatedwatersensoricon,
   });
 }
@@ -107,30 +103,29 @@ function OnePager(props) {
           {props.execution.map((exe) => {
             imageRight = !imageRight;
             let index = props.execution.indexOf(exe);
-            let imageId = props.images[index+1];
+            let imageId = props.images[2*index+1];
             console.log(props.images);
             console.log(imageId);
             if (imageRight) {
               return (
                 <div className="information-row">
-            <div className="information">
-              <div className="information-title">Execution</div>
-              <p className="information-description">{exe}</p>
-            </div>
-            <img alt="None :(" className="project-picture" id={imageId ? "short" : ""} src={props.images[index*2]} />
-            </div>
+                  <div className="information">
+                    <div className="information-title">Execution</div>
+                    <p className="information-description">{exe}</p>
+                  </div>
+                  <img alt="None :(" className="project-picture" id={imageId ? "short" : "tall"} src={props.images[index*2]} />
+                </div>
               )
-            }
+            } else {
             return (
               <div className="information-row">
-                <img alt="none :(" className="project-picture" id={imageId ? "short" : ""} src={props.images[index*2]}  />
-              <div className="information">
-                
-                <div className="information-title"></div>
-                <p className="information-description">{exe}</p>
-            </div>
-            </div>
-            )
+                <img alt="None :(" className="project-picture" id={imageId ? "short" : "tall"} src={props.images[index*2]}  />
+                <div className="information">
+                  <div className="information-title"></div>
+                  <p className="information-description">{exe}</p>
+                </div>
+              </div>
+            )}
           })}
           
         </div>

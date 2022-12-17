@@ -227,9 +227,8 @@
 }
 .information-grid {
   position: relative;
-  width: 100%;
-  justify-content: center;
-  align-items: middle;
+  width: 95%;
+  align-items: center;
   display: grid;
   grid-template-columns: 44% 44%;
   height: fit-content;
@@ -239,17 +238,18 @@
   margin-bottom: 100px;
 }
 .information-row {
+  width: 100%;
   display:grid;
+  height: fit-content;
   grid-template-rows: fit-content;
-  align-items: middle;
-  justify-content: center;
-  grid-gap: 20px;
+  grid-gap: 40px;
+  justify-items: center;
 }
 .information {
   position: relative;
   left: 7%;
   justify-content: center;
-  width: 85%;
+  width: 100%;
   height: fit-content;
   margin-top: 0px;
   color: var(--whole-text-color);
@@ -257,7 +257,7 @@
 .project-picture {
   position: relative;
   height: 500px;
-  width: min(100%, initial);
+  width: 85%;
   border-radius:10px;
   
   /*box-shadow: 0 2px 8px 3px var(--whole-text-color);*/
@@ -267,6 +267,10 @@
 #short {
   height: initial;
   width: 100%;
+}
+#tall {
+  height: initial;
+  width: 75%;
 }
 .project-title {
   font-size: 54px;
@@ -306,9 +310,9 @@
   color: var(--project-text-color);
 }
 .information-description {
-  margin-top:30px;
-  width: calc(100% - 20px);
-  text-align: left;
+  margin-top:25px;
+  width: 100%;
+  text-align: middle;
   font-size: min(2.5vw,24px);
   font-family: Copperplate;
 }
@@ -343,7 +347,11 @@
 .about-me {
   width: 85%;
   background-color: var(--whole-background);
-  height: 900px;
+  height: fit-content;
+  padding-bottom:20px;
+}
+.about-me-link {
+  color: var(--whole-text-color);
 }
 .about-me p {
   font-size: min(2.5vw, 24px);
