@@ -25,7 +25,7 @@ function Home() {
      
       </div>
       <h2>Programming:</h2>
-      <p>I've found myself accumulating more languages over time, dabbling just a little bit in some that I would never claim to know, but with each project, I add a new language.
+      <p>I've found myself accumulating more languages over time, dabbling just a little bit in each one, and with each project, I add a new language.
          Some languages that I've used in the past include <strong>Java, Python, C, C++, JavaScript, HTML,</strong> and <strong>CSS</strong>
       </p>
       <h2>Projects</h2>
