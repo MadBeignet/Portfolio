@@ -229,7 +229,7 @@
   position: relative;
   width: calc(100% - 50px);
   height: 100%;
-  left:10px;
+  left:20px;
 }
 .information-grid {
   position: relative;
@@ -346,37 +346,15 @@
   margin-left: 20px;
   margin-top: 20px;
 }
-
-/* HOME */
 .about-me {
-  width: 85%;
+  width: 100%;
   background-color: var(--whole-background);
   height: fit-content;
   padding-bottom:20px;
 }
-.about-me-link {
-  color: var(--whole-text-color);
-}
-.about-me p {
-  font-size: min(2.5vw, 24px);
-  font-family: Copperplate;
-  margin: 20px;
-}
-.about-me h1 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.about-me h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-.headshot {
-  position: relative;
-  width: 100%;
-  height: initial;
-  top: -30px;
-}
 .intro-grid {
   display: grid;
-  grid-template-columns: 20% 65%;
+  grid-template-columns: 90%;
   grid-gap: 20px;
   margin: 20px;
   margin-bottom: -40px;
@@ -385,6 +363,43 @@
   height: fit-content;
   justify-items: center;
 }
+/* HOME */
+@media (min-width: 600px) {
+  .about-me {
+    width: 85%;
+  }
+  .intro-grid {
+    grid-template-columns: 35% 60%;
+  }
+  .headshot {
+    width: 100%;
+  }
+}
+
+.about-me-link {
+  color: var(--whole-text-color);
+}
+.about-me p {
+  font-size: min(2.5vw, 24px);
+  font-family: Copperplate;
+  margin-bottom: 40px;
+}
+.about-me h1 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: min(8vw, 52px);
+}
+.about-me h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: min(5vw, 36px);
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.headshot {
+  position: relative;
+  width: 50%;
+  height: initial;
+}
+
 
 .footer {
   position: relative;
