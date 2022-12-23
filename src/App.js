@@ -97,9 +97,9 @@ function OnePager(props) {
       <div className="project-title">{props.projectTitle}
       <img alt="none :(" src={props.icon} className="page-icon"/>
       </div>
-      <div className="line"></div>
+      
         <div className="information-grid">
-        <img alt="none :(" className="project-picture" src={props.image1} />
+        <img alt="none :(" className="project-picture" id="short" src={props.image1} />
           <div className="information">
             <div className="information-title">Problem</div>
               <p className="information-description">{props.problem}</p>
