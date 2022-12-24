@@ -2,17 +2,16 @@ import filelines from './file-lines-solid.svg';
 import folderopen from './folder-open-solid.svg';
 import folder from './folder-solid.svg';
 import githubicon from './github_icon.svg';
-import machinemanager from './machinemanager.png';
-import watersensor from './watersensor.JPG';
+import machinemanager from './machinemanager.webp';
+import watersensor from './watersensor.webp';
 import circle from './circle.svg';
-import watersensorproposal from './Indoor Water Sensors Proposal.jpg';
-import the3sensors from './the3sensors.jpg';
-import updatedsensor from './updatedsensor.jpg';
-import updatedwatersensoricon from './updatedwatersensoricon.png'
-import headshot from './Maddie_Wisinski.jpg'
-import mapexample from './mapexample.png'
-import addUser from './addUser.png';
-import editUser from './editUser.png';
+import the3sensors from './the3sensors.webp';
+import updatedsensor from './updatedsensor.webp';
+import updatedwatersensoricon from './updatedwatersensoricon.webp'
+import headshot from './Maddie_Wisinski.webp'
+import mapexample from './mapexample.webp'
+import addUser from './addUser.webp';
+import editUser from './editUser.webp';
 
 export {
     filelines,
@@ -22,7 +21,6 @@ export {
     machinemanager,
     watersensor,
     circle,
-    watersensorproposal,
     the3sensors,
     updatedsensor,
     updatedwatersensoricon,
