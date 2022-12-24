@@ -395,7 +395,6 @@
   width: 95%;
   height: fit-content;
   justify-items: center;
-  border: 2px solid black;
 }
 /* HOME */
 @media (min-width: 800px) {
