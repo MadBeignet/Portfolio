@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import './Hamburger.css';
 
 export default function Hamburger() {
@@ -20,18 +19,18 @@ export default function Hamburger() {
         <h3>Menu</h3>
         <div className="menu-line" ></div>
         <ul className="input-container">
-            <NavLink to="/">
+            <a href="/">
                 <input type="button" className="menu-label2" value="Home"/>
-            </NavLink>
-            <NavLink to="/resume">
+            </a>
+            <a href="/resume">
                 <input type="button" className="menu-label2" value="Resume" />
-            </NavLink>
-            <NavLink to="/current-water-sensors">
+            </a>
+            <a href="/current-water-sensors">
                 <input type="button" className="menu-label2" value="Water Sensors" />
-            </NavLink>
-            <NavLink href="/makerspace-machine-manager">
+            </a>
+            <a href="/makerspace-machine-manager">
                 <input type="button" className="menu-label2" value="Machine Manager" />
-            </NavLink>
+            </a>
         </ul>
       </nav>
     </label>

@@ -10,7 +10,7 @@
 
 .header {
   position:absolute;
-  width: calc(100% - 15px);
+  width: calc(100% - 12px);
   height: 40px;
   background-color: #813232;
   padding-left: 15px;
@@ -22,10 +22,10 @@
   font-family: 'Brush Script MT', "Brush";
   font-size: 18pt;
   color: var(--text-color);
-  padding-top: 3px;
+  top: 9px;
   height: 45px;
   width: fit-content;
-  left:-25px;
+  left:10px;
   background-color: transparent;
   border: none;
   padding-left: 40px;
@@ -87,7 +87,6 @@
 .page {
   position: relative;
   color: var(--whole-text-color);
-  left: -20px;
 }
 
 .resume-display {
@@ -114,7 +113,7 @@
     font-size: 24pt;
     color: var(--text-color);
     padding-left: 60px;
-    padding-top: 3px;
+    padding-top: 15px;
   }
 
   .title {
@@ -202,9 +201,10 @@
 }
 
 .project-container h1 {
+  top: 70%;
   position: relative;
   font-family: var(--font);
-  font-size: 28pt;
+  font-size: min(4vw, 28pt);
   font-weight: bold;
   text-align: center;
   color: var(--whole-text-color);
@@ -230,14 +230,15 @@
   position: relative;
   width: calc(100% - 50px);
   height: 100%;
-  left:20px;
 }
 .information-grid {
   position: relative;
   width: 95%;
   align-items: center;
+  justify-items: center;
+  justify-content: center;
   display: grid;
-  grid-template-columns: 44% 44%;
+  grid-template-columns: 90%;
   height: fit-content;
   grid-gap: 20px;
   margin-top:-50px;
@@ -246,20 +247,21 @@
 }
 .information-row {
   width: 100%;
-  display:grid;
+  display:grid; 
   height: fit-content;
   grid-template-rows: fit-content;
-  grid-gap: 40px;
+  margin: 0px;
   justify-items: center;
 }
 .information {
   position: relative;
-  left: 7%;
   justify-content: center;
-  width: 100%;
-  height: fit-content;
+  width: 60vw;
   margin-top: 0px;
   color: var(--whole-text-color);
+  overflow:visible;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 .project-picture {
   position: relative;
@@ -268,7 +270,6 @@
   border-radius:10px;
   
   /*box-shadow: 0 2px 8px 3px var(--whole-text-color);*/
-  margin: 10px;
   opacity: 0.95;
 }
 #short {
@@ -280,7 +281,7 @@
   width: 75%;
 }
 .project-title {
-  font-size: 54px;
+  font-size: min(6vw, 54px);
   font-weight: bold;
   font-family: var(--font);
   color: var(--project-text-color);
@@ -320,7 +321,7 @@
   margin-top:25px;
   width: 100%;
   text-align: middle;
-  font-size: min(2.5vw,24px);
+  font-size: min(max(12px,2.5vw),24px);
   font-family: Copperplate;
 }
 .line {
@@ -341,12 +342,43 @@
 
 .page-icon {
   position: absolute;
-  right: 9%;
-  width: 40px;
+  right: 4%;
+  width: min(5vw, 40px);
   height: initial;
-  margin-left: 20px;
-  margin-top: 20px;
 }
+
+@media (min-width: 875px) {
+  .information-grid {
+    position: relative;
+    width: 95%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 47% 47%;
+    height: fit-content;
+    grid-gap: 20px;
+    margin-top:-50px;
+    color: var(--project-text-color);
+    margin-bottom: 100px;
+  }
+  .information-row {
+    width: 100%;
+    display:grid;
+    height: fit-content;
+    grid-template-rows: fit-content;
+    grid-gap: 40px;
+    justify-items: center;
+  }
+  .information {
+    position: relative;
+    left: 7%;
+    justify-content: center;
+    width: 32vw;
+    height: fit-content;
+    margin-top: 0px;
+    color: var(--whole-text-color);
+  }
+}
+
 .about-me {
   width: 100%;
   background-color: var(--whole-background);
@@ -354,15 +386,16 @@
   padding-bottom:20px;
 }
 .intro-grid {
+  position: relative;
   display: grid;
   grid-template-columns: 90%;
   grid-gap: 20px;
-  margin: 8%;
-  margin-bottom: -40px;
+  margin-bottom: -25px;
   padding: 0px;
   width: 95%;
   height: fit-content;
   justify-items: center;
+  border: 2px solid black;
 }
 /* HOME */
 @media (min-width: 800px) {
@@ -381,7 +414,7 @@
   color: var(--whole-text-color);
 }
 .about-me p {
-  font-size: min(2.5vw, 24px);
+  font-size: min(max(14px,2.5vw), 24px);
   font-family: Copperplate;
   margin-bottom: 40px;
   padding-left: 1%;
@@ -399,15 +432,15 @@
 }
 .headshot {
   position: relative;
-  width: 50%;
+  width: 70%;
   height: initial;
 }
 
 
 .footer {
   position: relative;
-  width: calc(117.9% + 70px);
-  left:calc(-9.5% - 30px);
+  width: calc(117.9% + 68px);
+  left:calc(-9.5% - 41px);
   height: 200px;
   background-color: #813232;
   margin-top: 20px;

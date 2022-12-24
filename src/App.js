@@ -1,7 +1,7 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
 import { addUser, editUser, mapexample, headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
-//import Hamburger from './Hamburger.js';
+import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
 import React from 'react';
@@ -52,11 +52,11 @@ function Projects() {
         <h1>Machine Manager</h1>
         <h1>Mesh Water Sensors</h1>
         <NavLink to="/makerspace-machine-manager">
-            <input type="image" alt="none :(" className="project" src={machinemanager}/>
+            <input type="image" alt="none :(" className="project" id="tall" src={machinemanager}/>
         </NavLink>
         <div className="overlay"></div>
         <NavLink to="/current-water-sensors">
-            <input type="image" alt="none :(" className="project" src={watersensor}/>
+            <input type="image" alt="none :(" className="project" id="tall" src={watersensor}/>
         </NavLink>
         <div className="overlay"></div>
       </div>
@@ -173,7 +173,7 @@ function App() {
     
     <div className="header">
       
-      {/**<Hamburger />**/}
+      <Hamburger />
       
       <span className="title">Portfolio{GetPageName(location)}</span>
         
