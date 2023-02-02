@@ -186,9 +186,9 @@ export default class ChinaWallMoment extends React.Component {
       return (
           <div align="center">
               <div className="rectangle">
-              <img className="icon" src={takeoutbox} alt="no"/>
+              <img className="takeoutbox-icon" src={takeoutbox} alt=""/>
               <text id="centered">Costs</text>
-              <img className="icon" src={takeoutbox} alt="no"/>
+              <img className="takeoutbox-icon" src={takeoutbox} alt=""/>
               </div>
             <div>
                 <input

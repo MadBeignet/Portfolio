@@ -195,13 +195,10 @@ body {
     width: 200px;
     border-radius: 50px;
   }
-  .icon {
+  .takeoutbox-icon {
     position: relative;
     width: 40px;
     height: initial;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform: translateX(95px) translateY(-5px);
+    transform: translateX(5px) translateY(5px);
   }
   
