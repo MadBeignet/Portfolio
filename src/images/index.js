@@ -12,6 +12,8 @@ import headshot from './Maddie_Wisinski.webp'
 import mapexample from './mapexample.webp'
 import addUser from './addUser.webp';
 import editUser from './editUser.webp';
+import default_favicon from './favicon.svg';
+import takeoutbox from './takeoutbox3.png';
 
 export {
     filelines,
@@ -28,4 +30,6 @@ export {
     mapexample,
     addUser,
     editUser,
+    default_favicon,
+    takeoutbox,
 }

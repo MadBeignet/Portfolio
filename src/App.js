@@ -5,6 +5,8 @@ import Hamburger from './Hamburger.js';
 import { resume } from './documents';
 import ToolTip from '@mui/material/Tooltip';
 import React from 'react';
+import ChinaWallMoment from './ChinaWallMoment/ChinaWallMoment.js';
+
 
 function Home() {
   return (
@@ -110,8 +112,6 @@ function OnePager(props) {
             imageRight = !imageRight;
             let index = props.execution.indexOf(exe);
             let imageId = props.images[2*index+1];
-            console.log(props.images);
-            console.log(imageId);
             if (imageRight) {
               return (
                 <div className="information-row">
@@ -165,17 +165,14 @@ function BottomHeader(props) {
     </div>
   )
 }
-
-function App() {
+function Header(props) {
   const [foldervalue, updateFolder] = React.useState(folder);
-  let location = useLocation().pathname;
   return (
-    
     <div className="header">
       
       <Hamburger />
       
-      <span className="title">Portfolio{GetPageName(location)}</span>
+      <span className="title">Portfolio{GetPageName(props.location)}</span>
         
       <a href={resume} download>
         <ToolTip title="Download Resume">
@@ -195,19 +192,41 @@ function App() {
           <img alt="none :(" className="icon" id="github-icon" src={githubicon}/>
         </ToolTip>
       </a>
-      
-
-    {/**Routes**/}
+      <GetRoutes/>
+      </div>
+      )
+}
+function GetRoutes() {
+  return (
     <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="resume" element={<Resume />} />
-      <Route path="projects" element = {<Projects />} />
-      <Route path="current-water-sensors" element = {<CurrentWaterSensors />} />
-      <Route path="makerspace-machine-manager" element = {<MachineManager />} />
-    </Routes>
-    
-    </div>
-  );
+        <Route path="/" element={<Home />} />
+        <Route path="resume" element={<Resume />} />
+        <Route path="projects" element = {<Projects />} />
+        <Route path="current-water-sensors" element = {<CurrentWaterSensors />} />
+        <Route path="makerspace-machine-manager" element = {<MachineManager />} />
+        <Route path="china-wall-moment" element = {<ChinaWallMoment />} />
+      </Routes>
+  )
+}
+function App() {
+  let location = useLocation().pathname;
+  const favicon = document.getElementById("favicon");
+  
+  if (location !== "/china-wall-moment") {
+    favicon.href = "/favicon.svg";
+    document.title = "Maddie Wisinski";
+    return (
+     <Header />
+    )
+  } else {
+    favicon.href = "/takeoutbox3.png";
+    document.title = "china wall moment";
+    return (
+      <GetRoutes />
+    );
+  }
+  
+  
 }
 
 export default App;
