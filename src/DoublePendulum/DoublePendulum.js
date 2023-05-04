@@ -229,7 +229,7 @@ const f1 = (theta1, theta2, omega1, omega2, mass1, mass2, length1, length2) => {
     return () => {
       cancelAnimationFrame(requestIdRef.current);
     };
-  }, []);
+  });
 
   const handleMouseEvent = (e) => {
     //console.log("hello");
