@@ -1,11 +1,12 @@
 import './App.css';
 import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { addUser, editUser, mapexample, headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from './images';
+import { addUser, editUser, mapexample, headshot, updatedwatersensoricon, the3sensors, updatedsensor, filelines, folderopen, folder, githubicon, machinemanager, watersensor } from '../images';
 import Hamburger from './Hamburger.js';
-import { resume } from './documents';
+import { resume } from '../documents';
 import ToolTip from '@mui/material/Tooltip';
 import React from 'react';
-import ChinaWallMoment from './ChinaWallMoment/ChinaWallMoment.js';
+import ChinaWallMoment from '../ChinaWallMoment/ChinaWallMoment.js';
+import DoublePendulum from '../DoublePendulum/DoublePendulum.js';
 
 
 function Home() {
@@ -205,6 +206,7 @@ function GetRoutes() {
         <Route path="current-water-sensors" element = {<CurrentWaterSensors />} />
         <Route path="makerspace-machine-manager" element = {<MachineManager />} />
         <Route path="china-wall-moment" element = {<ChinaWallMoment />} />
+        <Route path="double-pendulum-project" element = {<DoublePendulum />} />
       </Routes>
   )
 }
