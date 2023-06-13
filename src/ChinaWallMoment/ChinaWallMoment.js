@@ -8,7 +8,10 @@ function DisplayCosts(props) {
           {props.list.map((person) => (
               <h3 key={person.name}>
                   <span className = "name-rectangle">
-                     {person.name} ${props.totalCost === 0 ? financial(parseFloat(person.total)) : person.total === 0 ? "0" : financial(parseFloat(person.total) + parseFloat(person.total)/(parseFloat(props.totalCostNoFees)) * (parseFloat(props.totalCost) - parseFloat(props.totalCostNoFees))) +  "(original: $" + financial(person.total) + ")" }
+                     {person.name} ${props.totalCost === 0 
+                     ? financial(parseFloat(person.total)) : person.total === 0 ? "0" 
+                     : financial(parseFloat(person.total) + parseFloat(person.total)/(parseFloat(props.totalCostNoFees)) 
+                     * (parseFloat(props.totalCost) - parseFloat(props.totalCostNoFees))) +  "(original: $" + financial(person.total) + ")" }
                   </span>
                   <input 
                     className="smaller-input-rectangle"
@@ -74,9 +77,6 @@ export default class ChinaWallMoment extends React.Component {
       })
   }
   updateInputCost(name, e) {
-    var arr = [1,2,3,4,5];
-    console.log(arr);
-    console.log(arr.splice(2, 0, 70));
     const value = e.target.value;
     let person = this.state.people.find((pers) => pers.name === name);
     const index = this.state.people.indexOf(person);
@@ -95,14 +95,6 @@ export default class ChinaWallMoment extends React.Component {
         }
         
     })
-    
-    // person.items = person.items + value;
-    // // person.value = value;
-    // this.setState((currentState) => {
-    //   return {
-    //     people: currentState.people.splice(index, 0, person),
-    //   }
-    // })
   }
 
   handleAddPerson() {
@@ -140,7 +132,6 @@ export default class ChinaWallMoment extends React.Component {
             }
         } else {
             return {
-                // the problem lies here
                 people: [newPerson],
                 inputCost: '',
                 totalCostNoFees: parseFloat(currentState.totalCostNoFees) + parseFloat(person.items),
@@ -174,7 +165,6 @@ export default class ChinaWallMoment extends React.Component {
           this.setState((currentState) => {
               return {
                   totalCost: parseFloat(currentState.inputTotal),
-                  //totalCost: financial(parseFloat(currentState.totalCostNoFees) + parseFloat(currentState.inputFees)),
                   inputTotal: '',
               }
           })
@@ -194,7 +184,6 @@ export default class ChinaWallMoment extends React.Component {
                     className = 'inputRectangle'
                     type = 'text'
                     placeholder = 'New Person'
-                    // controlled component
                     value = {this.state.inputPerson}
                     onChange={this.updateInputPerson}
                     />
@@ -216,7 +205,6 @@ export default class ChinaWallMoment extends React.Component {
                     className = "inputRectangle"
                     type = 'number'
                     placeholder = 'Total Cost'
-                    // controlled component
                     value = {this.state.inputTotal}
                     onChange={this.updateInputTotal}
                     />
@@ -228,15 +216,3 @@ export default class ChinaWallMoment extends React.Component {
       )
   }
 }
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <React.StrictMode>
-//     <ChinaWallMoment />
-//   </React.StrictMode>
-// );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-

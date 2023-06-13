@@ -8,10 +8,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('images/circle.svg');
-  background-repeat: repeat;
+  /* background-image: url('images/circle.svg'); */
+  /* background-repeat: repeat;
   background-position: 1% 1%;
-  background-size: 0.5%;
+  background-size: 0.5%; */
   
 }
 
