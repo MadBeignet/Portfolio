@@ -1,6 +1,17 @@
+:root {
+    --text-color: #f3bbbb;
+    --font: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    --whole-background: var(--text-color);
+    --whole-text-color: #652121;
+    --project-text-color: rgb(21, 1, 1);
+    --project-background: #bb6771;
+    --project-shadow: rgb(145, 118, 118);
+    --header-background: #813232;
+  }
+
 .header {
     height: 75px;
-    background-color: gray;
+    background-color: var(--header-background);
     display: table;
     width: 100%;
 
@@ -17,5 +28,7 @@
     display: table-cell;
     width: fit-content;
     vertical-align: middle;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family:"Brush Script MT", "Brush";
+    padding-left: 20px;
+    color: var(--text-color);
 }
