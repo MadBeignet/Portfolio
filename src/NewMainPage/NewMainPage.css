@@ -1,0 +1,10 @@
+.header {
+    height: 75px;
+    background-color: gray;
+}
+
+#fancy-name {
+    font-size: 2vw;
+    height: fit-content;
+    vertical-align: middle;
+}
