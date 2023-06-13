@@ -1,10 +1,21 @@
 .header {
     height: 75px;
     background-color: gray;
+    display: table;
+    width: 100%;
+
 }
 
 #fancy-name {
+    font-size: 3.5vh;
+    height: 50px;
+}
+
+.name-box {
     font-size: 2vw;
-    height: fit-content;
+    height: 50px;
+    display: table-cell;
+    width: fit-content;
     vertical-align: middle;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
