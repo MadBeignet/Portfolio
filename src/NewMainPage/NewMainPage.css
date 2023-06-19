@@ -7,13 +7,15 @@
     --project-background: #bb6771;
     --project-shadow: rgb(145, 118, 118);
     --header-background: #813232;
+    --about-me-back: #e8989c;
   }
 
 .header {
-    height: 75px;
+    height: max(40px,3.5vw);
     background-color: var(--header-background);
-    display: table;
+    display: flex;
     width: 100%;
+    align-items: center;
 
 }
 
@@ -23,7 +25,7 @@
 }
 
 .name-box {
-    font-size: 2vw;
+    font-size: max(2vw,20px);
     height: 50px;
     display: table-cell;
     width: fit-content;
@@ -31,4 +33,42 @@
     font-family:"Brush Script MT", "Brush";
     padding-left: 20px;
     color: var(--text-color);
+    background-color: transparent;
+    border: none;
+    text-decoration: none;
+}
+.name-box:hover {
+    color:#652121
+}
+
+.main-container {
+    display: flex;
+}
+.about-me {
+    width: max(400px, 25vw);
+    background-color:var(--about-me-back);
+    height: calc(100vh - max(40px, 3.5vw));
+}
+
+.projects {
+    width: calc(100vw - max(400px, 25vw));
+    justify-content: center;
+    
+}
+.project-container {
+    display: flex;
+    justify-content: center;
+}
+.project {
+    display: table-cell;
+    background-color: var(--about-me-back);
+    width: 10vw;
+    height: 10vw;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+
+.nav-link {
+    text-decoration: none;
 }
