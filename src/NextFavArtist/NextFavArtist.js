@@ -41,6 +41,54 @@ function NextFavArtist() {
 
   useEffect(() => {
     if (!token) return;
+    const getUser = async () => {
+      if (!makeUserAPICalls) return;
+      const { data } = await axios
+        .get(BASE_ROUTE + "/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .catch((err) => {
+          if (err.response.status === 401) {
+            logout();
+          }
+        });
+      setUser(data);
+    };
+    const getTopArtists = async () => {
+      if (!makeUserAPICalls) return;
+      const { data } = await axios
+        .get(BASE_ROUTE + "/me/top/artists", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          params: {
+            limit: NUM_TOP_ARTISTS,
+            time_range: "medium_term",
+          },
+        })
+        .catch((err) => {
+          if (err.response.status === 401) {
+            logout();
+          }
+        });
+      setTopArtists(data.items);
+      setTopArtistList(data.items.map((artist) => artist.id));
+    };
+    const getTopTracks = async () => {
+      if (!makeUserAPICalls) return;
+      const { data } = await axios.get(BASE_ROUTE + "/me/top/tracks", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+        params: {
+          limit: NUM_TOP_TRACKS,
+          time_range: "short_term",
+        },
+      });
+      setTopTracks(data.items);
+    };
     getUser();
     getTopArtists();
     getTopTracks();
@@ -58,52 +106,41 @@ function NextFavArtist() {
     window.localStorage.removeItem("token");
   };
 
-  const getUser = async () => {
-    if (!makeUserAPICalls) return;
-    const { data } = await axios
-      .get(BASE_ROUTE + "/me", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .catch((err) => {
-        if (err.response.status === 401) {
-          logout();
-        }
-      });
-    setUser(data);
-  };
-
-  const getTopArtists = async () => {
-    if (!makeUserAPICalls) return;
-    const { data } = await axios
-      .get(BASE_ROUTE + "/me/top/artists", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-        params: {
-          limit: NUM_TOP_ARTISTS,
-          time_range: "medium_term",
-        },
-      })
-      .catch((err) => {
-        if (err.response.status === 401) {
-          logout();
-        }
-      });
-    setTopArtists(data.items);
-    setTopArtistList(data.items.map((artist) => artist.id));
-  };
-
   useEffect(() => {
     if (!topArtistList) return;
+    const getRelated = (artist) => {
+      if (!makeArtistAPICalls) return;
+      return axios
+        .get(BASE_ROUTE + "/artists/" + artist + "/related-artists", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        })
+        .then((response) => {
+          return {
+            data: response.data,
+          };
+        })
+        .catch((err) => console.log(err));
+    };
+    const resolvePromises = (allArtists) => {
+      return Promise.all(allArtists.map((a) => getRelated(a)));
+    };
+    const getRelatedArtists = async (artists) => {
+      resolvePromises(artists)
+        .then((resp) => {
+          setTopRelatedArtistsList(resp.map((d) => d.data.artists).flat());
+        })
+        .catch((e) => console.log(e));
+    };
     getRelatedArtists(topArtistList);
-  }, [topArtistList]);
-  const idToArtist = (artist) => {
-    return topRelatedArtistsList.find((a) => artist === a.id);
-  };
+  }, [topArtistList, token]);
+
   useEffect(() => {
     if (!topRelatedArtistsList) return;
+    const idToArtist = (artist) => {
+      return topRelatedArtistsList.find((a) => artist === a.id);
+    };
     const counts = {};
     topRelatedArtistsList.forEach((a, ind) => {
       if (a.id in counts) {
@@ -119,33 +156,7 @@ function NextFavArtist() {
         .map((art) => idToArtist(art))
         .slice(0, 50)
     );
-  }, [topRelatedArtistsList]);
-
-  const getRelated = (artist) => {
-    if (!makeArtistAPICalls) return;
-    return axios
-      .get(BASE_ROUTE + "/artists/" + artist + "/related-artists", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-      .then((response) => {
-        return {
-          data: response.data,
-        };
-      })
-      .catch((err) => console.log(err));
-  };
-  const resolvePromises = (allArtists) => {
-    return Promise.all(allArtists.map((a) => getRelated(a)));
-  };
-  const getRelatedArtists = async (artists) => {
-    resolvePromises(artists)
-      .then((resp) => {
-        setTopRelatedArtistsList(resp.map((d) => d.data.artists).flat());
-      })
-      .catch((e) => console.log(e));
-  };
+  }, [topRelatedArtistsList, topArtistList]);
 
   const displayArtists = (arts) => {
     const arr = [...Array(10 + 1).keys()].slice(1);
@@ -223,20 +234,6 @@ function NextFavArtist() {
         </div>
       );
     }
-  };
-
-  const getTopTracks = async () => {
-    if (!makeUserAPICalls) return;
-    const { data } = await axios.get(BASE_ROUTE + "/me/top/tracks", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      params: {
-        limit: NUM_TOP_TRACKS,
-        time_range: "short_term",
-      },
-    });
-    setTopTracks(data.items);
   };
 
   const displayUser = () => {
