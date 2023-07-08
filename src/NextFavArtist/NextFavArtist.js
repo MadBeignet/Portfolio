@@ -2,7 +2,7 @@ import "./NextFavArtist.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const NUM_TOP_ARTISTS = 30;
+const NUM_TOP_ARTISTS = 50;
 const NUM_TOP_ARTISTS_USED = 10;
 const NUM_TOP_TRACKS = 100;
 
