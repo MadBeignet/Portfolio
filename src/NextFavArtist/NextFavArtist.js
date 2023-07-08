@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 const NUM_TOP_ARTISTS = 10;
-const NUM_TOP_ARTISTS_USED = 30;
+const NUM_TOP_ARTISTS_USED = 40;
 const NUM_TOP_TRACKS = 100;
 
 const CLIENT_ID = "20397efaf16a42a2a08d6d9bc9b96a8a";
