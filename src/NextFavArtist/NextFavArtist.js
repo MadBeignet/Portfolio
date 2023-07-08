@@ -2,7 +2,7 @@ import "./NextFavArtist.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const NUM_TOP_ARTISTS = 10;
+const NUM_TOP_ARTISTS = 30;
 const NUM_TOP_ARTISTS_USED = 10;
 const NUM_TOP_TRACKS = 100;
 
@@ -108,7 +108,7 @@ function NextFavArtist() {
   };
 
   useEffect(() => {
-    if (!topArtistList) return;
+    if (!topArtists) return;
     const getRelated = (artist) => {
       if (!makeArtistAPICalls) return;
       return axios
@@ -134,8 +134,8 @@ function NextFavArtist() {
         })
         .catch((e) => console.log(e));
     };
-    getRelatedArtists(topArtistList);
-  }, [topArtistList, token]);
+    getRelatedArtists(topArtists.map((a) => a.id));
+  }, [topArtists, token]);
 
   useEffect(() => {
     if (!topRelatedArtistsList) return;
