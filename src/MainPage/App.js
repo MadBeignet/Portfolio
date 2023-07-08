@@ -362,13 +362,17 @@ function App() {
     document.title = "Maddie Wisinski";
     return <Header />;
   } else {
-    favicon.href = "/takeoutbox3.png";
-    document.title = "china wall moment";
+    favicon.href =
+      location === "/china-wall-moment"
+        ? "/takeoutbox3.png"
+        : "/music_note.webp";
+    document.title =
+      location === "/china-wall-moment"
+        ? "china wall moment"
+        : "next fav artist";
     if (location === "/next-fav-artist") {
       document.body.style.backgroundColor = "#1c1f24";
       document.body.style.color = "lightgray";
-      favicon.href = "/music_note.webp";
-      document.title = "next fav artist";
     }
     return <GetRoutes />;
   }
