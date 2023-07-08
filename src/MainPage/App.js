@@ -364,9 +364,12 @@ function App() {
   } else {
     favicon.href = "/takeoutbox3.png";
     document.title = "china wall moment";
-    if (location === "/next-fav-artist")
+    if (location === "/next-fav-artist") {
       document.body.style.backgroundColor = "#1c1f24";
-    document.body.style.color = "lightgray";
+      document.body.style.color = "lightgray";
+      favicon.href = "/music_note.webp";
+      document.title = "next fav artist";
+    }
     return <GetRoutes />;
   }
 }
