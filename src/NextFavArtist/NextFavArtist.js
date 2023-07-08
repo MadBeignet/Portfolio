@@ -7,7 +7,7 @@ const NUM_TOP_ARTISTS_USED = 40;
 const NUM_TOP_TRACKS = 100;
 
 const CLIENT_ID = "20397efaf16a42a2a08d6d9bc9b96a8a";
-const REDIRECT_URI = "http://www.wisinski.dev/next-fav-artist";
+const REDIRECT_URI = "http://localhost:3000/next-fav-artist";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
 const SCOPES = "user-follow-read user-read-recently-played user-top-read";
@@ -23,6 +23,7 @@ function NextFavArtist() {
   const [topTracks, setTopTracks] = useState([]);
   const [topRelatedArtistsList, setTopRelatedArtistsList] = useState([]);
   const [recommendedArtists, setRecommendedArtists] = useState([]);
+  const [page, setPage] = useState("top-artists");
 
   useEffect(() => {
     const hash = window.location.hash;
@@ -279,25 +280,109 @@ function NextFavArtist() {
     );
   };
 
-  return (
-    <div className="App">
-      <div className="header-spotify">
-        <h1 className="header-text-spotify">Next Favorite Artist</h1>
-        {!token ? (
-          <a
-            className="login-logout"
-            href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`}
-          >
-            Login to Spotify
-          </a>
-        ) : (
-          <button className="login-logout" onClick={logout}>
-            Logout
-          </button>
-        )}
-      </div>
+  const cond_mobile_display = () => {
+    switch (page) {
+      case "top-artists":
+        return (
+          <div className="artist-container">
+            <h2>Top Artists</h2>
+            {displayArtists(topArtists)}
+          </div>
+        );
+      case "top-tracks":
+        return (
+          <div className="song-container">
+            <h2 align="middle">Recent Top Tracks</h2>
+            {displayTracks(topTracks)}
+          </div>
+        );
+      case "recommended-artists":
+        return (
+          <div className="artist-container">
+            <h3>Recommended Artists</h3>
+            {displayArtists(recommendedArtists)}
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
-      {display()}
+  return (
+    <div>
+      <div className="desktop-display">
+        <div className="App">
+          <div className="header-spotify">
+            <h1 className="header-text-spotify">Next Favorite Artist</h1>
+            {!token ? (
+              <a
+                className="login-logout"
+                href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`}
+              >
+                Login to Spotify
+              </a>
+            ) : (
+              <button className="login-logout" onClick={logout}>
+                Logout
+              </button>
+            )}
+          </div>
+
+          {display()}
+        </div>
+      </div>
+      <div className="mobile-display">
+        <div className="App">
+          <div className="header-spotify">
+            <h1 className="header-text-spotify">Next Favorite Artist</h1>
+            {!token ? (
+              <a
+                className="login-logout"
+                href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPES}`}
+              >
+                Login to Spotify
+              </a>
+            ) : (
+              <button className="login-logout" onClick={logout}>
+                Logout
+              </button>
+            )}
+          </div>
+          <div className="button-container">
+            <button
+              className={
+                page === "top-artists"
+                  ? "spotify-button-active"
+                  : "spotify-button"
+              }
+              onClick={() => setPage("top-artists")}
+            >
+              Top Artists
+            </button>
+            <button
+              className={
+                page === "top-tracks"
+                  ? "spotify-button-active"
+                  : "spotify-button"
+              }
+              onClick={() => setPage("top-tracks")}
+            >
+              Top Tracks
+            </button>
+            <button
+              className={
+                page === "recommended-artists"
+                  ? "spotify-button-active"
+                  : "spotify-button"
+              }
+              onClick={() => setPage("recommended-artists")}
+            >
+              Recommended Artists
+            </button>
+          </div>
+          {token ? cond_mobile_display() : null}
+        </div>
+      </div>
     </div>
   );
 }
