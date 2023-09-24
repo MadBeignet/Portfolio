@@ -1,25 +1,7 @@
 import React from "react";
-import Header from "./Header";
-import AboutMe from "./AboutMe";
 import Projects from "./Projects";
-import GetRoutes from "./GetRoutes";
 
-import {
-  addUser,
-  editUser,
-  mapexample,
-  headshot,
-  updatedwatersensoricon,
-  the3sensors,
-  updatedsensor,
-  filelines,
-  folderopen,
-  folder,
-  githubicon,
-  machinemanager,
-  watersensor,
-  linkedin,
-} from "../images";
+import { filelines, githubicon, linkedin } from "../images";
 import resume from "../documents/resume.pdf";
 import ToolTip from "@mui/material/Tooltip";
 

@@ -1,7 +1,6 @@
 import React from "react";
 import "./NewMainPage.css";
 import Hamburger from "./Hamburger";
-import AboutMe from "./AboutMe";
 import { NavLink } from "react-router-dom";
 
 function Header() {
