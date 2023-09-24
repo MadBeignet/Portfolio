@@ -1,0 +1,234 @@
+:root {
+  --main-background: rgb(67, 80, 112);
+  --header-background-spotify: rgb(24, 24, 28);
+  --spotify-background: #1c1f24;
+}
+
+.App {
+  text-align: center;
+}
+.header-spotify {
+  width: 100%;
+  height: 75px;
+  background-color: var(--header-background-spotify);
+  display: table;
+  color: white;
+}
+.header-text-spotify {
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0;
+  font-size: 20px;
+}
+
+.login-logout {
+  position: absolute;
+  top: 22px;
+  left: 30px;
+  margin: 0;
+  margin-right: 50px;
+  background-color: rgb(48, 48, 78);
+  border: none;
+  color: rgb(255, 207, 207);
+  width: 75px;
+  height: 35px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  padding-top: 2px;
+}
+.login-logout:hover {
+  cursor: pointer;
+}
+
+.container {
+  margin-top: 25px;
+  margin-bottom: 50px;
+  display: grid;
+  margin-left: 1vw;
+  vertical-align: middle;
+  grid-template-columns: 20vw 20vw 20vw 20vw;
+  grid-gap: 5vw;
+}
+.profile-container {
+  display: grid;
+  width: 200px;
+  background-color: var(--main-background);
+  border-radius: 12px;
+  color: white;
+  padding-bottom: 10px;
+  height: min(calc(100vh - 150px), 325px);
+  overflow-y: scroll;
+  justify-content: center;
+}
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  left: 22px;
+}
+.artist-container {
+  display: grid;
+  vertical-align: middle;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+.artist {
+  margin-bottom: 5px;
+  display: table;
+  /* grid-template-columns: 100px 100px; */
+  vertical-align: middle;
+}
+.artist-name {
+  width: 100px;
+  height: 100px;
+  display: table-cell;
+  position: relative;
+  vertical-align: middle;
+  text-align: start;
+  left: 15px;
+}
+.song-container {
+  text-align: start;
+  display: grid;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
+}
+.song {
+  display: table;
+  vertical-align: middle;
+  grid-template-columns: 25px 250px;
+  margin-bottom: 7px;
+}
+.song-picture {
+  display: table-cell;
+  width: 25px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.song-name {
+  vertical-align: middle;
+  display: table-cell;
+  width: 250px;
+  margin: 7px;
+}
+
+.blank-artist-picture {
+  width: 100px;
+  height: 100px;
+  background-color: var(--main-background);
+  border-radius: 12px;
+  opacity: 0.9;
+  display: table-cell;
+  border: 4px solid #1c1f24;
+}
+.blank-artist-name-cell {
+  width: 150px;
+  vertical-align: middle;
+  display: table-cell;
+}
+.blank-artist-name {
+  left: 15px;
+  width: 150px;
+  height: 35px;
+  background-color: var(--main-background);
+  border-radius: 10px;
+  opacity: 0.9;
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.blank-track-picture {
+  width: 25px;
+  height: 25px;
+  background-color: var(--main-background);
+  border-radius: 5px;
+  opacity: 0.9;
+  display: table-cell;
+  border: 2px solid #1c1f24;
+}
+
+.blank-track-name-cell {
+  width: 200px;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.blank-track-name {
+  left: 15px;
+  width: 150px;
+  height: 22px;
+  background-color: var(--main-background);
+  border-radius: 8px;
+  opacity: 0.9;
+  position: relative;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.profile-link {
+  text-decoration: none;
+  color: white;
+}
+.profile-link:hover {
+  text-decoration: underline;
+}
+
+.desktop-display {
+  display: block;
+}
+.mobile-display {
+  justify-content: center;
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .desktop-display {
+    display: none;
+  }
+  .mobile-display {
+    display: block;
+  }
+  .header-text-spotify {
+    font-size: 18px;
+  }
+  .login-logout {
+    left: 20px;
+  }
+  .artist-container {
+    justify-content: center;
+  }
+  .artist {
+    width: 200px;
+    display: grid;
+    grid-template-columns: 100px 125px;
+    height: 100px;
+    grid-gap: 5px;
+  }
+  .song-container {
+    justify-content: center;
+  }
+}
+.button-container {
+  width: 100%;
+  height: 30px;
+  display: grid;
+  grid-template-columns: 30vw 30vw 40vw;
+  background-color: var(--header-background-spotify);
+  margin-bottom: 20px;
+}
+.spotify-button {
+  background-color: var(--header-background-spotify);
+  border: 1px solid var(--header-background-spotify);
+  color: white;
+  height: 40px;
+}
+
+.spotify-button-active {
+  height: 40px;
+  background-color: var(--spotify-background);
+  border: 1px solid var(--spotify-background);
+  color: white;
+  border-radius: 10px;
+}
