@@ -1,0 +1,5 @@
+navy color1: #022449
+orange color2: #F27D42
+darkish blue color3: #55BDCA
+light blue color4: #96FFFF
+very light blue color5: #C8EFF9
