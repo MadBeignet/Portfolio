@@ -1,7 +1,34 @@
+@font-face {
+  font-family: "montserrat";
+  src: url("https://use.typekit.net/af/32b0e4/00000000000000007735a185/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/32b0e4/00000000000000007735a185/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/32b0e4/00000000000000007735a185/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "brush-script-std";
+  src: url("https://use.typekit.net/af/2ab51c/0000000000000000000131c0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/2ab51c/0000000000000000000131c0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/2ab51c/0000000000000000000131c0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+}
+
 :root {
   --text-color: #c8eff9;
   /* --font: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif; */
-  --font: "Montserrat", "Source Sans Pro";
+  --font: "Montserrat", "Source Sans Pro", "Albori Sans-Serif";
   --whole-background: var(--text-color);
   --whole-text-color: #022449;
   --project-text-color: rgb(21, 1, 1);
@@ -38,7 +65,7 @@
   display: table-cell;
   width: fit-content;
   vertical-align: middle;
-  font-family: "Brush Script MT", "Brush";
+  font-family: "Brush Script MT", "Brush", "brush-script-std";
   margin-left: 20px;
   color: var(--text-color);
   background-color: transparent;
@@ -226,8 +253,8 @@
 }
 .resume-display {
   position: relative;
-  top: 25px;
-  width: min(798px, 65%);
+  top: 10px;
+  width: min(798px, 100%);
 
   border: none;
 }
