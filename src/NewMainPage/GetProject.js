@@ -2,17 +2,10 @@ import {
   addUser,
   editUser,
   mapexample,
-  headshot,
   updatedwatersensoricon,
   the3sensors,
   updatedsensor,
-  filelines,
-  folderopen,
-  folder,
-  githubicon,
   machinemanager,
-  watersensor,
-  linkedin,
 } from "../images";
 // import "../MainPage/App.css";
 import "./Project.css";
