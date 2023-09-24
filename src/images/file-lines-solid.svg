@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 26.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 384 512" style="enable-background:new 0 0 384 512;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#F3BBBB;}
-</style>
-<path class="st0" d="M64,0C28.7,0,0,28.7,0,64v384c0,35.3,28.7,64,64,64h256c35.3,0,64-28.7,64-64V160H256c-17.7,0-32-14.3-32-32V0
-	H64z M256,0v128h128L256,0z M112,256h160c8.8,0,16,7.2,16,16s-7.2,16-16,16H112c-8.8,0-16-7.2-16-16S103.2,256,112,256z M112,320
-	h160c8.8,0,16,7.2,16,16s-7.2,16-16,16H112c-8.8,0-16-7.2-16-16S103.2,320,112,320z M112,384h160c8.8,0,16,7.2,16,16s-7.2,16-16,16
-	H112c-8.8,0-16-7.2-16-16S103.2,384,112,384z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f27d42;
+        stroke-width: 0px;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="m64,0C28.7,0,0,28.7,0,64v384c0,35.3,28.7,64,64,64h256c35.3,0,64-28.7,64-64V160h-128c-17.7,0-32-14.3-32-32V0H64Zm192,0v128h128L256,0ZM112,256h160c8.8,0,16,7.2,16,16s-7.2,16-16,16H112c-8.8,0-16-7.2-16-16s7.2-16,16-16Zm0,64h160c8.8,0,16,7.2,16,16s-7.2,16-16,16H112c-8.8,0-16-7.2-16-16s7.2-16,16-16Zm0,64h160c8.8,0,16,7.2,16,16s-7.2,16-16,16H112c-8.8,0-16-7.2-16-16s7.2-16,16-16Z"/>
 </svg>

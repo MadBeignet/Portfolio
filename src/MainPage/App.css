@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --text-color: #f3bbbb;
   --font: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   --whole-background: var(--text-color);
@@ -87,14 +87,14 @@
 .page {
   position: relative;
   color: var(--whole-text-color);
-  /*background-color: black;*/
+  
 }
 
 .resume-display {
   position: relative;
   top: 25px;
   width: min(798px, 65%);
-  /*height: 800px;*/
+  
   border: none;
 }
 
@@ -142,19 +142,7 @@
     height: 21px;
   }
 
-  /* #folder2 {
-    position:relative;
-    width: 28px;
-    height: 21px;
-    transform: translateX(1.5px);
-    display: none;
-  }
-  #surround:hover img[id="folder1"] {
-    display: none;
-  }
-  #surround:hover img[id="folder2"] {
-    display: inline;
-  } */
+
 
   @keyframes App-logo-spin {
     from {
@@ -184,7 +172,7 @@
   }
 }
 
-/* PROJECTS */
+
 .project-container {
   display: grid;
   justify-content: center;
@@ -218,7 +206,7 @@
   opacity: 0.8;
 }
 
-/* PROJECT */
+
 .document {
   height: initial;
   width: 50%;
@@ -266,7 +254,7 @@
   width: 85%;
   border-radius: 10px;
 
-  /*box-shadow: 0 2px 8px 3px var(--whole-text-color);*/
+  
   opacity: 0.95;
 }
 #short {
@@ -293,7 +281,7 @@
   top: -0px;
   left: 7.25%;
   width: 85%;
-  /*background-color: var(--project-background);*/
+  
   background-color: var(--whole-background);
   height: fit-content;
   z-index: -15;
@@ -393,7 +381,7 @@
   height: fit-content;
   justify-items: center;
 }
-/* HOME */
+
 @media (min-width: 800px) {
   .about-me {
     width: 85%;
@@ -459,4 +447,4 @@
   color: var(--whole-background);
   top: 20px;
   font-family: var(--font);
-}
+} */

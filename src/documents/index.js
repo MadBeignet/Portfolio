@@ -1,5 +1,3 @@
-import resume from './Resume 12-24-22.pdf';
+import resume from "./resume.pdf";
 
-export {
-    resume,
-}
+export { resume };

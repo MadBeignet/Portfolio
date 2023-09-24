@@ -1,0 +1,132 @@
+/* .project-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 20px 1fr;
+  grid-gap: 40px;
+  margin: 40px 10px;
+  padding: 0px;
+  width: 100%;
+  height: 700px;
+  margin-bottom: 200px;
+} */
+
+/* .project-container h1 {
+  top: 70%;
+  position: relative;
+  font-family: var(--font);
+  font-size: min(4vw, 28pt);
+  font-weight: bold;
+  text-align: center;
+  color: var(--whole-text-color);
+  margin: 0px;
+} */
+/* .project {
+  position: relative;
+
+  height: 30vw;
+  width: initial;
+} */
+/* .project:hover {
+  cursor: pointer;
+  opacity: 0.8;
+} */
+
+/* PROJECT */
+:root {
+  color: #022449;
+}
+.document {
+  height: initial;
+  width: 50%;
+}
+.page {
+  position: relative;
+  /* width: calc(100% - 50px); */
+  height: calc(100% - 75px);
+}
+.information-grid {
+  position: relative;
+  width: 95%;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 40% 40%;
+  height: fit-content;
+  grid-gap: 20px;
+  margin-top: 50px;
+  color: var(--project-text-color);
+  padding-bottom: 100px;
+  /* border: 1px solid black; */
+  border-top: 3px solid var(--whole-text-color);
+}
+.information-row {
+  width: 100%;
+  display: grid;
+  height: fit-content;
+  grid-template-rows: fit-content;
+  margin: 0px;
+  margin-top: 10px;
+  justify-items: center;
+  /* border: 1px solid black; */
+  grid-gap: 50px;
+}
+.information {
+  position: relative;
+  justify-content: center;
+  width: 28vw;
+  margin-top: 0px;
+  color: var(--whole-text-color);
+  overflow: visible;
+  padding-left: 5px;
+  padding-right: 5px;
+  /* border: 1px solid black; */
+  margin-top: 10px;
+}
+.project-picture {
+  position: relative;
+  height: 32vw;
+  width: initial;
+  margin-bottom: 50px;
+  border-radius: 10px;
+
+  opacity: 0.95;
+  margin-top: 30px;
+}
+.page-icon {
+  position: absolute;
+  right: 4%;
+  width: min(5vw, 40px);
+  height: initial;
+}
+.information-description {
+  font-size: min(1.8vw, 30px);
+}
+
+.information-title h3 {
+  color: hsl(20, 87%, 60%);
+  margin: 0;
+}
+
+@media (max-width: 750px) {
+  .information-grid {
+    grid-template-columns: 90%;
+  }
+  .project-picture {
+    height: 50vw;
+    margin-bottom: 0px;
+  }
+  .page h2 {
+    font-size: 5.5vw;
+  }
+  .information-grid {
+    margin-top: 0px;
+  }
+  .information-description {
+    font-size: 4vw;
+  }
+  .information {
+    width: 80vw;
+  }
+}

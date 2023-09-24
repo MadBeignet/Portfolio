@@ -3,18 +3,22 @@ body {
   background: var(--text-color);
   height: 100vh;
   /*background: linear-gradient(60deg, red, black);*/
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('images/circle.svg'); */
-  /* background-repeat: repeat;
-  background-position: 1% 1%;
-  background-size: 0.5%; */
-  
+  background-image: url("images/background_image.png");
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 18%;
+  /* background-clip: content-box; */
+  /* background-position: bottom; */
+  /* background-clip: content-box
+  ; */
+  background-attachment: fixed;
 }
 
 code {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
