@@ -1,3 +1,3 @@
-import resume from "./resume.pdf";
+import resume from "./resume.jpg";
 
 export { resume };
