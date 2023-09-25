@@ -92,8 +92,9 @@
   margin-bottom: 50px;
   border-radius: 10px;
 
-  opacity: 0.95;
+  /* opacity: 0.95; */
   margin-top: 30px;
+  box-shadow: 0.5px 0.5px 10px 1px #0e2946;
 }
 .page-icon {
   position: absolute;

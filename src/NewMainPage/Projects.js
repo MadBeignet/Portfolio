@@ -9,8 +9,8 @@ function Projects() {
       <h1 align="middle">Projects</h1>
       <div className="project-container" align="middle">
         <div className="project-item">
-          <h5 className="project-desc">Machine Manager</h5>
-          <NavLink to="/makerspace-machine-manager">
+          <NavLink className="project-button" to="/makerspace-machine-manager">
+            <h5 className="project-desc">Machine Manager</h5>
             <input
               type="image"
               alt="none :("
@@ -21,8 +21,8 @@ function Projects() {
           </NavLink>
         </div>
         <div className="project-item">
-          <h5 className="project-desc">Current: Water Sensors</h5>
-          <NavLink to="/current-water-sensors">
+          <NavLink className="project-button" to="/current-water-sensors">
+            <h5 className="project-desc">Current: Water Sensors</h5>
             <input
               type="image"
               alt="none :("
@@ -30,11 +30,12 @@ function Projects() {
               id="tall"
               src={watersensor}
             />
+            {/* <img className="project" id="blank-tall" src={watersensor} /> */}
           </NavLink>
         </div>
         <div className="project-item">
-          <h5 className="project-desc">Next Favorite Artist</h5>
-          <NavLink to="/next-fav-artist">
+          <NavLink className="project-button" to="/next-fav-artist">
+            <h5 className="project-desc">Next Favorite Artist</h5>
             <input
               type="image"
               alt="none :("
