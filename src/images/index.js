@@ -15,6 +15,9 @@ import editUser from "./editUser.webp";
 import default_favicon from "./favicon.svg";
 import takeoutbox from "./takeoutbox3.png";
 import linkedin from "./linkedin.svg";
+import nextfavartist0 from "./nextfavartist0.png";
+import nextfavartist1 from "./nextfavartist1.jpg";
+import nextfavartist2 from "./nextfavartist2.jpg";
 
 export {
   filelines,
@@ -34,4 +37,7 @@ export {
   default_favicon,
   takeoutbox,
   linkedin,
+  nextfavartist0,
+  nextfavartist1,
+  nextfavartist2,
 };

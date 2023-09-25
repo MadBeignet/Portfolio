@@ -107,8 +107,9 @@
   /* width: 100vw; */
   display: grid;
   justify-content: center;
-  grid-template-columns: 25vw 25vw 25vw;
-  grid-gap: 1vw;
+  grid-template-columns: 20vw 20vw 20vw;
+  grid-gap: 5vw;
+  margin-top: 50px;
 }
 .project {
   display: table-cell;
@@ -116,7 +117,7 @@
   width: 15vw;
   height: 10vw;
   border-radius: 20px;
-  margin: 20px;
+  /* margin: 20px; */
 }
 
 .nav-link {
@@ -198,6 +199,31 @@
 #desc {
   font-size: 1.45vw;
 }
+.project-desc {
+  margin: 0;
+
+  margin-bottom: 10px;
+  font-size: min(1.7vw, 25px);
+}
+#tall {
+  height: initial;
+  width: 100%;
+}
+#really-tall {
+  height: initial;
+  width: 80%;
+}
+.resume-display {
+  position: relative;
+  top: 10px;
+  width: min(798px, 100%);
+
+  border: none;
+}
+.page {
+  position: relative;
+  color: var(--whole-text-color);
+}
 
 @media (max-width: 750px) {
   .mobile-display {
@@ -235,6 +261,7 @@
     grid-template-columns: 50vw;
     grid-gap: 1vw;
     grid-template-rows: fit-content;
+    margin-top: 20px;
   }
   .project {
     width: 43vw;
@@ -242,23 +269,14 @@
     border-radius: 1vw;
     /* margin: 20px; */
   }
-}
-#project-desc {
-  margin: 0;
-  margin-bottom: 10px;
-}
-#tall {
-  height: initial;
-  width: 75%;
-}
-.resume-display {
-  position: relative;
-  top: 10px;
-  width: min(798px, 100%);
-
-  border: none;
-}
-.page {
-  position: relative;
-  color: var(--whole-text-color);
+  #tall {
+    width: 80%;
+  }
+  #really-tall {
+    width: 70%;
+  }
+  .project-desc {
+    font-size: min(3vw, 20px);
+    margin-top: 30px;
+  }
 }

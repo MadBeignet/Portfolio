@@ -39,6 +39,13 @@ export default function Hamburger() {
                 value="Machine Manager"
               />
             </a>
+            <a href="/next-fav-artist">
+              <input
+                type="button"
+                className="menu-label2"
+                value="Next Favorite Artist"
+              />
+            </a>
           </ul>
         </nav>
       </label>

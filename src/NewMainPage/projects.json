@@ -1,1 +1,30 @@
-{}
+{ "projects": [{
+    "projectTitle": "Mesh Water Sensors",
+    "problem":
+      "Because New Orleans floods a lot, buildings can often experience indoor flooding. Without a person or camera physically seeing flooding, it is impossible to truly detect it, leading to unwanted, expensive water damage.",
+    "solution":
+      "Water sensors that can detect and communicate to a server will send alerts when there is water in a certain location. The server can communicate instantaneously with subscribed and dedicated users, such as building managers, to alert them of flooding.",
+    "image1": "the3sensors",
+    "execution": [
+      "My main job was creating the housing unit in Fusion360 to account for wires, electronics, sensors, as well as creating ways for water to be detected on all 4 sides. The device worked by having conductivity sensors, so when measuring the conductivity, a high value meant water. Because we separated each sensor by 1 cm in height, this allowed us to read the water level to the centimeter. We sent a boolean array representative of each sensor to The Things Network, which allowed a webpage to read off and display points on a map relative to each device's water level. Through a short bit of JavaScript, the array was translated into events, water level, and the battery level of the device in millivolts.",
+      " This information was then accessed by a webpage, which displayed the sensors at their respective locations and indicated their water level visually on the map. In later stages of this project, we began using ReactJS to represent our sensors on a map. Throughout this project, I learned the basics of Web Development and how to effectively prototype, and it's one of the projects I'm currently most proud of."
+    ],
+    "images": "[mapexample, false, updatedsensor, false]",
+    "icon": "updatedwatersensoricon"
+  },
+  {
+    "projectTitle": "Makerspace Machine Manager",
+    "problem":
+      "The Tulane MakerSpace always requires a way to have users both independently and safely use machines in the Space, but in January 2022, there was no longer a way to add new users or additional trainings to users, which created a problem with ensuring independence of users throughout the Space.",
+    "solution":
+      "A web application that allows students to safely use machines through the use of authorization and a tag out system. Preferably, this system would be better than the previous, allowing for suggestions from current Fabrication Technicians.",
+    "image1": "machinemanager",
+    "execution": [
+      "Using ReactJS and NodeJS ensured for a database and efficient communication between the server and the client, which is crucial when users rely on the permissions set by the system. Other than transferring over data and making sure that machines could be toggled on and off, one major problem that needed to be solved was adding users.Before, users would be manually added to the system through the use of a database on a raspberry pi. Our goal for this project was to surpass this level of maintanability, so we created a page dedicated to adding users. The page is extremely easy to use, requiring a Fabrication Technician's ID as well as the new card ID. The new user has to also input some additional information, and if any slot is left out, a warning pops up beside the input box. Through the use of this page, a new user is added to the system immediately, and this can be reflected by tapping the RFID card on a reader, presenting the user's name.",
+      "A large part of the MakerSpace is user independence, and part of this is training users to use certain machines and tools. Therefore, users need to be able to have trainings added, so that the system permits them to use the machines. I created the page to edit a user's training by first presenting a login page, which will only allow Fabrication Technicians or Administrators to access the edit page. Once a username is typed in, the user's trainings will appear. I decided to use a checkbox system to represent trainings as it's simple and represents exactly what is needed. Additionally, only Administrators will be able to see the \"FabTech\" Box. This software is currently in use at the Tulane MakerSpace, increasing the efficiency and user independence."
+    ],
+    "images": "[editUser, false, addUser, true]",
+    "icon": "machinemanager"
+  }
+]
+}
