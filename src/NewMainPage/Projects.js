@@ -7,7 +7,7 @@ function Projects() {
   return (
     <div className="projects">
       <h1 align="middle">Projects</h1>
-      <div className="project-container">
+      <div className="project-container" align="middle">
         <div className="project-item">
           <NavLink to="/makerspace-machine-manager">
             <input
