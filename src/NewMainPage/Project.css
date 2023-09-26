@@ -113,6 +113,11 @@
   margin: 0;
   font-size: min(2.5vw, 40px);
 }
+.page h2 {
+  font-size: min(3vw, 40px);
+  color: var(--whole-text-color);
+  font-weight: bold;
+}
 
 @media (max-width: 750px) {
   .information-grid {
