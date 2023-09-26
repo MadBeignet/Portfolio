@@ -8,7 +8,7 @@ function Header() {
     <div className="header">
       {/* <p>testawdawdawdad</p> */}
       <Hamburger />
-      <NavLink className="nav-link">
+      <NavLink className="nav-link" to="/">
         <button type="checkbox" className="name-box">
           Maddie Wisinski
         </button>
