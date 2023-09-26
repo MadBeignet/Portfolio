@@ -75,6 +75,7 @@
 }
 .name-box:hover {
   color: #55bdca;
+  cursor: pointer;
 }
 
 .main-container {
