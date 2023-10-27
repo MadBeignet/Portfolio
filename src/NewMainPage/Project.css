@@ -118,6 +118,9 @@
   color: var(--whole-text-color);
   font-weight: bold;
 }
+#small {
+  height: 18vw;
+}
 
 @media (max-width: 750px) {
   .information-grid {
@@ -145,5 +148,9 @@
   .information-row {
     grid-template-columns: 100%;
     grid-gap: 0px;
+  }
+  #small {
+    width: 40vw;
+    height: initial;
   }
 }

@@ -9,6 +9,11 @@ import {
   nextfavartist0,
   nextfavartist1,
   nextfavartist2,
+  joustremakeimg,
+  joustgif,
+  spriterun,
+  prototype_radio,
+  explanation,
 } from "../images";
 // import "../MainPage/App.css";
 import "./Project.css";
@@ -62,6 +67,35 @@ export function NextFavoriteArtist() {
     icon: nextfavartist0,
   });
 }
+
+export function JoustRemake() {
+  return ShortProject({
+    imgs: [joustgif, "short", spriterun, "small"],
+    descriptions: [
+      "For an Intro to Computer Graphics class, my teammate and I were tasked with recreating a retro game using OpenGL in C++. To start I created static images, and I messed around with the equations of motion, such as acceleration, velocity, and position. I created surface class and assigned them a hitbox along with a custom image, allowing the characters to interact with the surfaces, such as dip down beneath, land on, and bounce against on the side.",
+      "Later on, we created custom sprites to mock their motions, and I created a way for those sprites to be switched through. The motions that we included were when the character jumped, fell, and ran on the ground. To assign direction (left or right), it was based on the sign of velocity. Overall, this project was super fun especially getting to interact with the bare bones of graphics and equations of motion in OpenGL.",
+    ],
+    descriptionTitles: ["Intro"],
+    title: "Joust Remake",
+  });
+}
+
+export function MoireCapstone() {
+  return (
+    <div>
+      {ShortProject({
+        title: "Moiré (Senior Capstone Project)",
+        descriptions: [
+          "For my senior year, I'm leading my capstone team in creating a mesh network of measurement nodes. The nodes will take abiotic measurements of the environment and report them to a database. The data consisting of soil moisture, temperature, relative humidity, and sunlight will then be visualized using a web application available to analyze and inspect the data. This technology will be dedicated to FCAT, an Ecuadorian NGO that is focusing on reforestation and biodiversity in Ecuador. By creating this technology, we are giving them the power to identify the optimal environment for their land to be reforested.",
+          "For this project, we will be utilizing an ESP32 on a custom PCB, which will be powered by a solar panel and battery. The device will wake up only when it takes measurements and then communicate them via radio to the nearest node that is closest to the gateway, which will receive all the data. We will be coating the PCB to prevent water or corrosion, and we will be 3D printing an enclosure. The device will be approximately 18 cm tall and 2.5 cm wide, and to ensure that the device stays in place, it will be attached to a stake that will stick into the ground. I'm super excited to be working on this project, and I will continue to update this page as it progresses.",
+        ],
+        descriptionTitles: ["Intro"],
+        imgs: [explanation, "tall", prototype_radio, "short"],
+      })}
+    </div>
+  );
+}
+
 function OnePager(props) {
   let imageRight = false;
   return (
@@ -99,7 +133,7 @@ function OnePager(props) {
                       alt="None :("
                       className="project-picture"
                       id={imageId ? "short" : "tall"}
-                      src={props.images[index * 2]}
+                      src={props.images[index * 2] || null}
                     />
                     <div className="information">
                       <div className="information-title">
@@ -116,7 +150,7 @@ function OnePager(props) {
                       alt="None :("
                       className="project-picture"
                       id={imageId ? "short" : "tall"}
-                      src={props.images[index * 2]}
+                      src={props.images[index * 2] || null}
                     />
                     <div className="information">
                       <div className="information-title">
@@ -196,6 +230,79 @@ function OnePager(props) {
                 );
               }
             })}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ShortProject(props) {
+  return (
+    <div className="page" align="middle">
+      <div className="desktop-display">
+        {props.title && (
+          <div className="project-title">
+            <h2>{props.title}</h2>
+          </div>
+        )}
+
+        <div className="information-grid">
+          <div className="information-row">
+            <img
+              id={props.imgs[1] || ""}
+              className="project-picture"
+              alt=":("
+              src={props.imgs[0] || null}
+            />
+            <div className="information">
+              <div className="information-title">
+                <h3>{props.descriptionTitles[0] || ""}</h3>
+              </div>
+              <p className="information-description">{props.descriptions[0]}</p>
+            </div>
+            <div className="information">
+              <p className="information-description">{props.descriptions[1]}</p>
+            </div>
+            <img
+              // id="short"
+              id={props.imgs[3] || ""}
+              className="project-picture"
+              alt=":("
+              src={props.imgs[2] || null}
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mobile-display">
+        <div className="project-title">
+          <h2>{props.title || ""}</h2>
+        </div>
+        <div className="information-grid">
+          <div className="information-row">
+            <div className="information">
+              <div className="information-title">
+                <h3>{props.descriptionTitles[0] || ""}</h3>
+              </div>
+              <p className="information-description">{props.descriptions[0]}</p>
+              <img
+                id={props.imgs[1] || ""}
+                className="project-picture"
+                alt=":("
+                src={props.imgs[0] || null}
+              />
+            </div>
+
+            <div className="information">
+              <p className="information-description">{props.descriptions[1]}</p>
+            </div>
+            <img
+              // id="short"
+              id={props.imgs[3] || ""}
+              className="project-picture"
+              alt=":("
+              src={props.imgs[2] || null}
+            />
           </div>
         </div>
       </div>

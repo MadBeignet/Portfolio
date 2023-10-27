@@ -3,6 +3,8 @@ import {
   CurrentWaterSensors,
   MachineManager,
   NextFavoriteArtist,
+  JoustRemake,
+  MoireCapstone,
 } from "./GetProject";
 import Resume from "./Resume";
 import NewMainPage from "./NewMainPage";
@@ -16,6 +18,8 @@ export default function GetRoutes() {
       <Route path="current-water-sensors" element={<CurrentWaterSensors />} />
       <Route path="makerspace-machine-manager" element={<MachineManager />} />
       <Route path="next-fav-artist" element={<NextFavoriteArtist />} />
+      <Route path="joust-remake" element={<JoustRemake />} />
+      <Route path="moire" element={<MoireCapstone />} />
       {/* <Route path="china-wall-moment" element={<ChinaWallMoment />} />
       <Route path="double-pendulum-project" element={<DoublePendulum />} /> */}
     </Routes>

@@ -25,6 +25,13 @@ export default function Hamburger() {
             <a href="/resume">
               <input type="button" className="menu-label2" value="Resume" />
             </a>
+            <a href="/moire">
+              <input
+                type="button"
+                className="menu-label2"
+                value="Moiré Sensor Nodes"
+              />
+            </a>
             <a href="/current-water-sensors">
               <input
                 type="button"
@@ -44,6 +51,13 @@ export default function Hamburger() {
                 type="button"
                 className="menu-label2"
                 value="Next Favorite Artist"
+              />
+            </a>
+            <a href="/joust-remake">
+              <input
+                type="button"
+                className="menu-label2"
+                value="Joust Remake"
               />
             </a>
           </ul>
