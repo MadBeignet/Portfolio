@@ -18,6 +18,12 @@ import linkedin from "./linkedin.svg";
 import nextfavartist0 from "./nextfavartist0.png";
 import nextfavartist1 from "./nextfavartist1.jpg";
 import nextfavartist2 from "./nextfavartist2.jpg";
+import joustremakeimg from "./joustremakeimg.png";
+import joustgif from "./joustgif.gif";
+import spriterun from "./spriterun.gif";
+import prototype from "./prototype.JPG";
+import prototype_radio from "./prototype_radio.JPG";
+import explanation from "./explanation.png";
 
 export {
   filelines,
@@ -40,4 +46,10 @@ export {
   nextfavartist0,
   nextfavartist1,
   nextfavartist2,
+  joustremakeimg,
+  joustgif,
+  spriterun,
+  prototype,
+  prototype_radio,
+  explanation,
 };

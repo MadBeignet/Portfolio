@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { machinemanager, watersensor, nextfavartist2 } from "../images";
+import {
+  machinemanager,
+  watersensor,
+  nextfavartist2,
+  joustremakeimg,
+  prototype,
+} from "../images";
 import "./NewMainPage.css";
 
 function Projects() {
@@ -9,14 +15,14 @@ function Projects() {
       <h1 align="middle">Projects</h1>
       <div className="project-container" align="middle">
         <div className="project-item">
-          <NavLink className="project-button" to="/makerspace-machine-manager">
-            <h5 className="project-desc">Machine Manager</h5>
+          <NavLink className="project-button" to="/moire">
+            <h5 className="project-desc">Moiré Sensor Nodes</h5>
             <input
               type="image"
               alt="none :("
               className="project"
               id="tall"
-              src={machinemanager}
+              src={prototype}
             />
           </NavLink>
         </div>
@@ -34,6 +40,19 @@ function Projects() {
           </NavLink>
         </div>
         <div className="project-item">
+          <NavLink className="project-button" to="/makerspace-machine-manager">
+            <h5 className="project-desc">Machine Manager</h5>
+            <input
+              type="image"
+              alt="none :("
+              className="project"
+              id="tall"
+              src={machinemanager}
+            />
+          </NavLink>
+        </div>
+
+        <div className="project-item">
           <NavLink className="project-button" to="/next-fav-artist">
             <h5 className="project-desc">Next Favorite Artist</h5>
             <input
@@ -42,6 +61,18 @@ function Projects() {
               className="project"
               id="really-tall"
               src={nextfavartist2}
+            />
+          </NavLink>
+        </div>
+        <div className="project-item">
+          <NavLink className="project-button" to="/joust-remake">
+            <h5 className="project-desc">Joust Remake</h5>
+            <input
+              type="image"
+              alt="none :("
+              className="project"
+              id="tall"
+              src={joustremakeimg}
             />
           </NavLink>
         </div>
