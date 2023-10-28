@@ -8,6 +8,7 @@ import {
 } from "./GetProject";
 import Resume from "./Resume";
 import NewMainPage from "./NewMainPage";
+import ChinaWallMoment from "./ChinaWallMoment/ChinaWallMoment";
 
 export default function GetRoutes() {
   return (
@@ -20,8 +21,8 @@ export default function GetRoutes() {
       <Route path="next-fav-artist" element={<NextFavoriteArtist />} />
       <Route path="joust-remake" element={<JoustRemake />} />
       <Route path="moire" element={<MoireCapstone />} />
-      {/* <Route path="china-wall-moment" element={<ChinaWallMoment />} />
-      <Route path="double-pendulum-project" element={<DoublePendulum />} /> */}
+      <Route path="china-wall-moment" element={<ChinaWallMoment />} />
+      {/*<Route path="double-pendulum-project" element={<DoublePendulum />} /> */}
     </Routes>
   );
 }
