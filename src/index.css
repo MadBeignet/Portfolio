@@ -8,6 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* This is where the self portrait is (line 12: "images/background_image.png")*/
   background-image: url("images/background_image.png");
   background-repeat: no-repeat;
   background-position: 0 100%;

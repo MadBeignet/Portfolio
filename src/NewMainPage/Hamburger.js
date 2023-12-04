@@ -1,6 +1,8 @@
 import React from "react";
 import "./Hamburger.css";
 
+// TODO: Update project names and links (according to GetRoutes.js links)
+
 export default function Hamburger() {
   return (
     <>

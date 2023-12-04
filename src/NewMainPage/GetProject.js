@@ -1,3 +1,4 @@
+// TODO: these will need to be changed with the images you add
 import {
   addUser,
   editUser,
@@ -17,6 +18,8 @@ import {
 // import "../MainPage/App.css";
 import "./Project.css";
 
+// TODO: This is the One Pager format that Barrios is looking for. This is clunkily written, but it works.
+// so just follow this and change the function name and the props (info) to match your stuff.
 export function CurrentWaterSensors() {
   return OnePager({
     projectTitle: "Mesh Water Sensors",
@@ -67,6 +70,7 @@ export function NextFavoriteArtist() {
   });
 }
 
+// TODO: This is a short project, just 2 pictures and 2 descs
 export function JoustRemake() {
   return ShortProject({
     imgs: [joustgif, "short", spriterun, "small"],

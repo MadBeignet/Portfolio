@@ -1,0 +1,40 @@
+Images:
+- a lot of images need to be updated
+  - Project images
+    - Main picture to kind of gather the gist of the project from a glance (viewable on main page)
+    - 3 pictures that relate to your project
+
+  - Self portrait???
+    - I used illustrator and traced the image of me as black and white, deleted the white in photoshop and 
+      then changed the color to something else
+    - You don't need this if you don't want but it's cool
+  
+  - These images need to be placed inside the images folder, and then in index.js --> import <insert_name> from '<file_name.png>'; 
+    then add the <insert_name> to the export list
+
+Information: 
+  I tried to mark spots that need changing
+  For example:
+    - Resume.js
+      - update the import
+      - update the file used inside the function
+    - GetProject.js 
+      - contains your onepagers, you will need to make them here. 
+      - This should happen after having images
+    - GetRoutes.js 
+      - I would start adding an empty function to GetProject.js and then add the import to GetRoutes and change the path/function name
+      - You will not be able to see your one pager until GetRoutes is updated.
+    - NewMainPage.css
+      - colors will need to be updated
+    - NewMainPage.js
+      - some hardcoded info will need to be added 
+      - need an updated resume in jpg form, linkedin link, and some blurb
+
+    - Hamburger.js 
+      - last 
+      - link updates
+    - Projects.js 
+      - also happens last
+      - Updating pictures, links, and names
+
+    

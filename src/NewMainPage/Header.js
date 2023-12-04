@@ -6,10 +6,10 @@ import { NavLink } from "react-router-dom";
 function Header() {
   return (
     <div className="header">
-      {/* <p>testawdawdawdad</p> */}
       <Hamburger />
       <NavLink className="nav-link" to="/">
         <button type="checkbox" className="name-box">
+          {/* TODO: Your name*/}
           Maddie Wisinski
         </button>
       </NavLink>

@@ -14,11 +14,13 @@ function NewMainPage() {
           {/* <AboutMe /> */}
           <div className="secondary-container">
             <div className="portfolio-welcome-message">
+              {/* TODO: Change these to be what match with your information*/}
               <h2>Hi, I'm Maddie Wisinski!</h2>
               <p>
                 I'm a Senior at Tulane University, graduating in Spring of 2024
                 with a BSE in Engineering Physics and Computer Science
               </p>
+              {/* TODO: You probably don't want this line to be like this */}
               <span id="desc">
                 I have designed this website using ReactJS, HTML, and CSS. The
                 repository for this website can be found{" "}
@@ -32,6 +34,7 @@ function NewMainPage() {
               <div className="info-grid">
                 <div>
                   <p>Resume</p>
+                  {/* TODO: Change resume file */}
                   <a href={resume} download>
                     <ToolTip title="Download Resume">
                       <img alt="none :(" className="icon" src={filelines} />
@@ -40,6 +43,7 @@ function NewMainPage() {
                 </div>
                 <div>
                   <p>LinkedIn</p>
+                  {/* TODO: Change linkedin link */}
                   <a href="https://www.linkedin.com/in/maddie-wisinski/">
                     <ToolTip title="View LinkedIn">
                       <img
@@ -53,6 +57,7 @@ function NewMainPage() {
                 </div>
                 <div>
                   <p>GitHub</p>
+                  {/* TODO: Find something more relevant, I will help you add it */}
                   <a href="https://www.github.com/MadBeignet">
                     <ToolTip title="View Github">
                       <img
@@ -76,6 +81,7 @@ function NewMainPage() {
           {/* <AboutMe /> */}
           <div className="secondary-container">
             <div className="portfolio-welcome-message">
+              {/* TODO: Change these to be what match with your information*/}
               <h2>Hi, I'm Maddie Wisinski!</h2>
               <p>
                 I'm a Senior at Tulane University, graduating in Spring of 2024
@@ -94,6 +100,7 @@ function NewMainPage() {
               <span className="info-grid">
                 <div>
                   <p>Resume</p>
+                  {/* Update resume doc */}
                   <a href={resume} download>
                     <ToolTip title="Download Resume">
                       <img alt="none :(" className="icon" src={filelines} />
@@ -102,6 +109,7 @@ function NewMainPage() {
                 </div>
                 <div>
                   <p>LinkedIn</p>
+                  {/* TODO: Change linkedin link*/}
                   <a href="https://www.linkedin.com/in/maddie-wisinski/">
                     <ToolTip title="View LinkedIn">
                       <img
@@ -115,6 +123,7 @@ function NewMainPage() {
                 </div>
                 <div>
                   <p>GitHub</p>
+                  {/* TODO: Replace with something else */}
                   <a href="https://www.github.com/MadBeignet">
                     <ToolTip title="View Github">
                       <img

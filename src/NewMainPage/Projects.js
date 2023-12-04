@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+// TODO: Update image imports
 import {
   machinemanager,
   watersensor,
@@ -9,6 +10,8 @@ import {
 } from "../images";
 import "./NewMainPage.css";
 
+// TODO: This is where you will also want to update project names, links, and images
+// prototype is the name of the image i used, given inside src/images/index.js
 function Projects() {
   return (
     <div className="projects">
@@ -36,7 +39,6 @@ function Projects() {
               id="tall"
               src={watersensor}
             />
-            {/* <img className="project" id="blank-tall" src={watersensor} /> */}
           </NavLink>
         </div>
         <div className="project-item">

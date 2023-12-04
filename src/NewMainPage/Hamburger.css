@@ -6,6 +6,7 @@
   --border-color: #022449;
   --burger-hover: #55bdca;
 }
+/* TODO: I am going to try to help with colors to make sure that they are easy to update */
 
 .overlay {
   position: fixed;
