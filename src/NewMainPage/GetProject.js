@@ -13,6 +13,10 @@ import {
   spriterun,
   prototype_radio,
   explanation,
+  pcb1,
+  pcb2,
+  enclosure_design,
+  device_design,
 } from "../images";
 // import "../MainPage/App.css";
 import "./Project.css";
@@ -90,6 +94,26 @@ export function MoireCapstone() {
         ],
         descriptionTitles: ["Intro"],
         imgs: [explanation, "tall", prototype_radio, "short"],
+      })}
+      {ShortProject({
+        line: false,
+        title: "",
+        descriptions: [
+          "For the first PCB, it did not include sensors directly on the board but rather had pinheaders for the sensors to be connected, and was roughly 4.5cm by 12cm. The reasoning for this is to focus on the power system, and this ended up benefitting us because there was an error. Because we were essentially recreating an Arduino board from scratch, this was unfamiliar, and we messed up the system that allows the board to actually take in code. That being said, the team member who designed these boards immediately researched on the topic and dove right in with a multimeter and a soldering iron to modify the board enough to test the full power system. This was crucial because even though the board had errors, we were able to not only learn what the errors were, but also ensure that the solution would allow the board to work.",
+          "For the second PCB, sensors were included on the board, such as an HDC1080 temperature and humidity sensor, a slot for a photoresistor to detect light, and the custom frequency soil moisture sensor. The board also changed shape, now reflecting the shape drawn above, with 30cm at its widest point and being about 180cm tall. This board also had some issues caused by the software used to create them, but that problem, like the previous problems, were solved by digging into the board and manually redirecting power. This solution allowed us to test solar charging with our current buck converter and battery as well as create code that reads the frequency-based soil moisture sensor. Another feature on this board is a power rail, which is enabled only when taking readings. This allows us to not waste power on sensors that remain in a sleep mode, which remains drawing power from our system. Doing so effectively saves us 12mAh of 26mAh of power per day, nearly eliminating half of the original power. Overall, we're making huge progress on this project, and I'm incredibly excited to see how our device progresses next semester.",
+        ],
+        descriptionTitles: ["PCB Design Updates (12/08/2023)"],
+        imgs: [pcb1, false, pcb2, false],
+      })}
+      {ShortProject({
+        line: false,
+        title: "",
+        descriptions: [
+          "Throughout the first semester, we realized a few problems. Because this device will be outdoors for its lifetime, it will need to be as weather proof as possible. This doesn't just mean the PCB, but also the enclosure. To solve this problem, I designed a enclosure fitted to the PCB design to allow for a neoprene layer between. This will ensure that the enclosure is as waterproof as possible without being airtight. This is because our sensors still need to access to air to take data points, such as humidity. For this issue specifically, we are using an expanded teflon mesh, which will allow airflow and moisture, but not water at low pressures. This solution has yet to be tested, but we are confident that it will work.",
+          "Another problem we realized related to charging. For instance, our current battery is an LIR2032 40mAh coin cell battery, which we calculated as having a lifetime without charge for 2.7 days. The charging issue isn't caused by the battery capacity, but actually by the charger/buck converter because the minimum applied voltage has to be between 4.2V and 6.4V. Our solar panel is capable up to 5.58V, but we found that the panel struggles on overcast days. It's unlikely that this problem is able to be solved by just getting a battery with much larger capacity because that's not the issue, but exchanging the buck converter or the solar panel will cost a lot more money, upwards of $400. With our $3,000 budget already being flexed, we are trying to find a solution that works for our device, budget, and our product receiver, FCAT.",
+        ],
+        descriptionTitles: ["Semester 1 Final Updates"],
+        imgs: [enclosure_design, false, device_design, false],
       })}
     </div>
   );
@@ -246,7 +270,13 @@ function ShortProject(props) {
           </div>
         )}
 
-        <div className="information-grid">
+        <div
+          className={
+            props.line === false
+              ? "information-grid-no-line"
+              : "information-grid"
+          }
+        >
           <div className="information-row">
             <img
               id={props.imgs[1] || ""}

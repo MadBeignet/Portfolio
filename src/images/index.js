@@ -24,6 +24,10 @@ import spriterun from "./spriterun.gif";
 import prototype from "./prototype.JPG";
 import prototype_radio from "./prototype_radio.JPG";
 import explanation from "./explanation.png";
+import pcb1 from "./pcb1.png";
+import pcb2 from "./pcb2.png";
+import enclosure_design from "./enclosure_design.png";
+import device_design from "./device_design.png";
 
 export {
   filelines,
@@ -52,4 +56,8 @@ export {
   prototype,
   prototype_radio,
   explanation,
+  pcb1,
+  pcb2,
+  enclosure_design,
+  device_design,
 };
