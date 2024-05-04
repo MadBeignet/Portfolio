@@ -1,0 +1,37 @@
+.display-point {
+    /* height: 40vh; */
+    height:100%;
+    width: 100%;
+    background-color: white;
+}
+.container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    /* height: calc(100vh - 150px); */
+}
+.marker {
+    height: 25px;
+    width: 25px;
+    border-radius:100%;
+    background-color: red;
+    justify-content: center;
+    align-items: middle;
+    text-align: center;
+    font-size: 20pt;
+}
+
+.marker:hover {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    /* background-color: black; */
+}
+
+.audio-img {
+    width: 60%;
+}
+
+p {
+    padding-left: 40px;
+    padding-right: 40px;
+}

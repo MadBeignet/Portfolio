@@ -9,6 +9,8 @@ import {
 import Resume from "./Resume";
 import NewMainPage from "./NewMainPage";
 import ChinaWallMoment from "./ChinaWallMoment/ChinaWallMoment";
+import DoublePendulum from "../DoublePendulum/DoublePendulum";
+import SoundMap from "./SoundMap/SoundMap";
 
 export default function GetRoutes() {
   return (
@@ -22,7 +24,8 @@ export default function GetRoutes() {
       <Route path="joust-remake" element={<JoustRemake />} />
       <Route path="moire" element={<MoireCapstone />} />
       <Route path="china-wall-moment" element={<ChinaWallMoment />} />
-      {/*<Route path="double-pendulum-project" element={<DoublePendulum />} /> */}
+      <Route path="double-pendulum-project" element={<DoublePendulum />} />
+      <Route path="sound-map" element = {<SoundMap/>} />
     </Routes>
   );
 }
