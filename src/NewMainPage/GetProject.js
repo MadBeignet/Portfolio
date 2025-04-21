@@ -17,6 +17,14 @@ import {
   pcb2,
   enclosure_design,
   device_design,
+  measurement_struct,
+  interval_example,
+  solar_panel,
+  battery_hole,
+  communication_success,
+  fake_sleep,
+  moire_presentation,
+  moire_final
 } from "../images";
 // import "../MainPage/App.css";
 import "./Project.css";
@@ -103,7 +111,7 @@ export function MoireCapstone() {
           "For the second PCB, sensors were included on the board, such as an HDC1080 temperature and humidity sensor, a slot for a photoresistor to detect light, and the custom frequency soil moisture sensor. The board also changed shape, now reflecting the shape drawn above, with 30cm at its widest point and being about 180cm tall. This board also had some issues caused by the software used to create them, but that problem, like the previous problems, were solved by digging into the board and manually redirecting power. This solution allowed us to test solar charging with our current buck converter and battery as well as create code that reads the frequency-based soil moisture sensor. Another feature on this board is a power rail, which is enabled only when taking readings. This allows us to not waste power on sensors that remain in a sleep mode, which remains drawing power from our system. Doing so effectively saves us 12mAh of 26mAh of power per day, nearly eliminating half of the original power. Overall, we're making huge progress on this project, and I'm incredibly excited to see how our device progresses next semester.",
         ],
         descriptionTitles: ["PCB Design Updates (12/08/2023)"],
-        imgs: [pcb1, false, pcb2, false],
+        imgs: [pcb1, "tall", pcb2, "tall"],
       })}
       {ShortProject({
         line: false,
@@ -113,7 +121,45 @@ export function MoireCapstone() {
           "Another problem we realized related to charging. For instance, our current battery is an LIR2032 40mAh coin cell battery, which we calculated as having a lifetime without charge for 2.7 days. The charging issue isn't caused by the battery capacity, but actually by the charger/buck converter because the minimum applied voltage has to be between 4.2V and 6.4V. Our solar panel is capable up to 5.58V, but we found that the panel struggles on overcast days. It's unlikely that this problem is able to be solved by just getting a battery with much larger capacity because that's not the issue, but exchanging the buck converter or the solar panel will cost a lot more money, upwards of $400. With our $3,000 budget already being flexed, we are trying to find a solution that works for our device, budget, and our product receiver, FCAT.",
         ],
         descriptionTitles: ["Semester 1 Final Updates"],
-        imgs: [enclosure_design, false, device_design, false],
+        imgs: [enclosure_design, "tall", device_design, "tall"],
+      })}
+      {ShortProject({
+        line: false,
+        title:"",
+        descriptions: [
+          "To solve this problem, I gathered 2 additional solar panel contenders. Both offered the same current, but slightly different voltage, but neither significant. The second panel had a more similar footprint to the current panel, but later I discovered they were out of stock. It was a go for panel #1 with 2.23V and 55mA. But at just over $4 a panel, it was going to take money. However with that money, we gained confidence in our device. For the associated buck converter, we would have to go with the 0.1V to 3.0V converter because of supply-chain issues. It is clear that switching solar panels is advantageous because of its nearly quadrupled charging speed. Because we also switched our battery to a JST connector, we saved $100 total, spending $250 net.",
+          "For the device firmware, I used RadioHead to create the mesh network because on the first message to another node, it saves the best path. I also planned out a timeline. At each measurement, the node would store and then go back to sleep for the remaining time until the next wakeup. On the final measurement of the day (or measurement period), the node would instead go into a wait state while it waited for a message from the gateway. As soon as the gateway sent the message, the node would then broadcast it for other nodes out of range, then the node would wait a random amount of time, send the data to the gateway, and then act as a relay point for other nodes throughout the rest of the time. After this point, the node would go to sleep. The gateway tallies up the measurements and the nodes, and sends it to the web-app to be displayed, also noting any nodes that did not check in."
+        ],
+        descriptionTitles: ["Semester 2 Updates"],
+        imgs: [solar_panel, "tall", interval_example, "tall"],
+
+      })}
+      {ShortProject({
+        line: false,
+        title:"",
+        descriptions: ["To test the firmware, I needed a few PCBs that could survive detached from a cable. To do this, we designed PCB 3, and because of our new battery, we had a different footprint. We wanted our device to be thin to preserve material, and because the bottom of the enclosure was taken, that woud mean the top, but we didn't want the device to be overloaded at the top. Because of this, I brought a novel idea to the table of cutting out a hole in the PCB to rest the battery. It was a tough goal, but I believed it was achievable, and at the end of the day, we had a design completely planned out. It was a go.",
+      "PCB 3 allowed me to test my firmware concept. I planned out the messages that would be sent from the nodes, using minimal storage because the messages had a limit of 255 bytes. Therefore, I created a Measurement struct consisting of 20 bytes when compacted. This means up to 12 measurements could be sent in 1 message or measurement period. To conserve power, the device turns off its accessory rail and goes to sleep. This means the process resets, and data stored normally while awake also resets. To combat this, the measurements are all stored in RTC, the clock, and as such, do not reset. By minimizing space and power, the device would functional maximally."
+    ],
+    descriptionTitles: ["Designing for Perfection"],
+    imgs: [battery_hole, "short", measurement_struct, "tall"],
+      })}
+      {ShortProject({
+        line: false,
+        title:"",
+        descriptions: ["To test my firmware, I uploaded code for nodes to 3 devices and the code to a gateway unit, which I kept plugged into my computer. After a few hours of fixing bugs and perfecting the communication, I was regularly receiving measurements from every node via radio. This was an incredible moment, and I will forever remember the feeling of hardwork paying off. Unfortunately after an hour, the gateway node began to have some issues of a boot loop. This was a nightmare, and I began to see this with every unit that stayed plugged in or had been charging. Finally, we discovered that even though the voltage of the battery was in range with our voltage regulator, after increasing above 4V, the MCU would enter a boot loop.",
+      "To combat this, if the voltage was above a certain point, the device would not actually shut down while waiting for its next measurement. The accessory rail would remain off, but to keep the device above the new maximum voltage, it would need to drain power. Reflecting on this, this was a point of failure, one that we only noticed when a device was plugged in."
+    ],
+    descriptionTitles: ["Making Progress"],
+    imgs: [communication_success, "tall", fake_sleep, "tall"]        
+      })}
+      {ShortProject({
+        line:false,
+        title:"",
+        descriptions: ["In contrast to our failure, we were able to successfully present our devices including a live demonstration. We found that the nodes we left outside to collect measurements struggled a bit to keep up even though they were working and charging. At the same time, we were incredibly proud of our achievements, and I was super proud to be involved. FCAT was super excited and came by to see our work, and they were amazed.",
+        "Eventually, we discovered that the devices were struggling with power. With the end of the semester just behind us, we were completely out of time. We encouraged future students to take up this project to expand and improve upon the work we've done. Through this project, I gained leadership skills, supply-chain knowledge, budgeting, analyzing datasheets for electronics, and strengthened my knowledge in Arduino. Although the project was ultimately a bust, I know it has paved a huge path for any future work for FCAT, and I'm curious to see what comes next."
+      ],
+        descriptionTitles: ["Final Updates & Conclusion"],
+        imgs: [moire_presentation, "short", moire_final, "short"]
       })}
     </div>
   );

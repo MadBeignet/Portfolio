@@ -28,6 +28,14 @@ import pcb1 from "./pcb1.png";
 import pcb2 from "./pcb2.png";
 import enclosure_design from "./enclosure_design.png";
 import device_design from "./device_design.png";
+import interval_example from './interval_example.png';
+import measurement_struct from './measurement_struct.png'
+import solar_panel from './solar_panel.png';
+import battery_hole from './battery_hole.png';
+import communication_success from './communication_success.png';
+import fake_sleep from './fake_sleep.png';
+import moire_presentation from './moire_presentation.png';
+import moire_final from './moire_final.png';
 
 export {
   filelines,
@@ -60,4 +68,12 @@ export {
   pcb2,
   enclosure_design,
   device_design,
+  interval_example,
+  measurement_struct,
+  solar_panel,
+  battery_hole,
+  communication_success,
+  fake_sleep,
+  moire_presentation,
+  moire_final
 };

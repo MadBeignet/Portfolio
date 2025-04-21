@@ -16,8 +16,9 @@ function NewMainPage() {
             <div className="portfolio-welcome-message">
               <h2>Hi, I'm Maddie Wisinski!</h2>
               <p>
-                I'm a Senior at Tulane University, graduating in Spring of 2024
-                with a BSE in Engineering Physics and Computer Science
+                I graduated from Tulane University with 
+                a BSE in Engineering Physics and Computer Science
+                and a certificate in Computational Engineering
               </p>
               <span id="desc">
                 I have designed this website using ReactJS, HTML, and CSS. The
@@ -78,8 +79,9 @@ function NewMainPage() {
             <div className="portfolio-welcome-message">
               <h2>Hi, I'm Maddie Wisinski!</h2>
               <p>
-                I'm a Senior at Tulane University, graduating in Spring of 2024
-                with a BSE in Engineering Physics and Computer Science
+                I graduated from Tulane University with 
+                a BSE in Engineering Physics and Computer Science
+                and a certificate in Computational Engineering
               </p>
               <span id="desc">
                 I have designed this website using ReactJS, HTML, and CSS. The
